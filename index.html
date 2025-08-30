@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ciepło Eko | Instalacje grzewcze, wodno-kanalizacyjne, wentylacyjne, klimatyzacyjne</title>
+  <meta name="description" content="Ciepło Eko oferuje profesjonalne instalacje grzewcze, wodno-kanalizacyjne, wentylacyjne, klimatyzacyjne i uzdatnianie wody. Działamy w Łodzi, Warszawie i okolicach.">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="180x180" href="assets/favicon-180.png">
+  <!-- Open Graph meta tags -->
+  <meta property="og:title" content="Ciepło Eko – Instalacje grzewcze i sanitarne">
+  <meta property="og:description" content="Profesjonalne instalacje CO, wod-kan, rekuperacja, klimatyzacja, uzdatnianie wody. 10 lat doświadczenia.">
+  <meta property="og:image" content="assets/logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cieploeko.pl">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased font-sans text-gray-800">
+  <!-- Navigation bar -->
+  <header class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="#" class="flex items-center space-x-3">
+        <img src="assets/logo.png" alt="Ciepło Eko logo" class="h-10 w-auto">
+        <span class="font-bold text-lg text-green-700">Ciepło Eko</span>
+      </a>
+      <nav class="hidden md:flex space-x-8 text-gray-600">
+        <a href="#about" class="hover:text-green-700">O nas</a>
+        <a href="#services" class="hover:text-green-700">Usługi</a>
+        <a href="#projects" class="hover:text-green-700">Realizacje</a>
+        <a href="#why" class="hover:text-green-700">Dlaczego my</a>
+        <a href="#contact" class="hover:text-green-700">Kontakt</a>
+      </nav>
+      <button id="menuBtn" class="md:hidden text-gray-600 focus:outline-none">
+        <!-- hamburger icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16" />
+        </svg>
+      </button>
+    </div>
+    <div id="mobileNav" class="md:hidden hidden px-4 pb-4">
+      <a href="#about" class="block py-2 text-gray-600 hover:text-green-700">O nas</a>
+      <a href="#services" class="block py-2 text-gray-600 hover:text-green-700">Usługi</a>
+      <a href="#projects" class="block py-2 text-gray-600 hover:text-green-700">Realizacje</a>
+      <a href="#why" class="block py-2 text-gray-600 hover:text-green-700">Dlaczego my</a>
+      <a href="#contact" class="block py-2 text-gray-600 hover:text-green-700">Kontakt</a>
+    </div>
+  </header>
+  <!-- Hero section -->
+  <section class="relative bg-cover bg-center py-24 text-white text-center" style="background-image: url('assets/hero-bg.jpg');">
+    <div class="bg-black bg-opacity-50 py-16 px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Instalacje dla Twojego domu</h1>
+      <p class="text-xl md:text-2xl mb-8">Profesjonalne systemy grzewcze, sanitarne i wentylacyjne w Polsce</p>
+      <a href="#contact" class="bg-green-700 hover:bg-green-800 text-white py-3 px-6 rounded-full font-semibold">Skontaktuj się</a>
+    </div>
+  </section>
+  <!-- About section -->
+  <section id="about" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center md:space-x-10">
+        <img src="assets/logo.png" alt="Logo" class="mb-6 md:mb-0 w-32 h-32 object-contain">
+        <div>
+          <h2 class="text-3xl font-bold mb-4 text-green-700">O nas</h2>
+          <p class="text-gray-700 text-lg leading-relaxed mb-3">Firma <strong>Ciepło Eko</strong> specjalizuje się w projektowaniu i instalacji nowoczesnych systemów grzewczych, wodno-kanalizacyjnych, wentylacyjnych i klimatyzacyjnych dla domów i firm.</p>
+          <p class="text-gray-700 text-lg leading-relaxed">Posiadamy ponad 10 lat doświadczenia, dzięki czemu możemy zaoferować naszym klientom najwyższą jakość usług i wsparcie na każdym etapie inwestycji. Nasz zespół składa się z wykwalifikowanych monterów, którzy dbają o solidność i terminowość wykonania.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Services section -->
+  <section id="services" class="py-16 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-green-700 mb-10">Nasze usługi</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="mb-4 flex justify-center">
+            <img src="assets/service1.png" alt="Instalacje grzewcze" class="w-16 h-16">
+          </div>
+          <h3 class="text-xl font-semibold text-green-700 mb-2">Instalacje grzewcze</h3>
+          <p class="text-gray-700">Montujemy kotły, pompy ciepła oraz instalacje ogrzewania podłogowego zapewniające komfort i oszczędność energii.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="mb-4 flex justify-center">
+            <img src="assets/service2.png" alt="Wodno-kanalizacyjne" class="w-16 h-16">
+          </div>
+          <h3 class="text-xl font-semibold text-green-700 mb-2">Instalacje wod-kan</h3>
+          <p class="text-gray-700">Wykonujemy kompleksowe instalacje wodociągowe i kanalizacyjne dla domów i obiektów komercyjnych.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="mb-4 flex justify-center">
+            <img src="assets/service3.png" alt="Wentylacja i rekuperacja" class="w-16 h-16">
+          </div>
+          <h3 class="text-xl font-semibold text-green-700 mb-2">Wentylacja i rekuperacja</h3>
+          <p class="text-gray-700">Zajmujemy się montażem systemów rekuperacji i wentylacji, które zapewniają świeże powietrze w Twoim domu.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="mb-4 flex justify-center">
+            <img src="assets/service4.png" alt="Klimatyzacja" class="w-16 h-16">
+          </div>
+          <h3 class="text-xl font-semibold text-green-700 mb-2">Klimatyzacja</h3>
+          <p class="text-gray-700">Projektujemy i instalujemy efektywne systemy klimatyzacji, które dbają o komfort termiczny przez cały rok.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="mb-4 flex justify-center">
+            <img src="assets/service5.png" alt="Uzdatnianie wody" class="w-16 h-16">
+          </div>
+          <h3 class="text-xl font-semibold text-green-700 mb-2">Uzdatnianie wody</h3>
+          <p class="text-gray-700">Oferujemy montaż stacji uzdatniania wody, które zapewniają czystą i zdrową wodę w każdym domu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Projects section -->
+  <section id="projects" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-green-700 mb-10 text-center">Realizacje</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="rounded-lg overflow-hidden shadow-md">
+          <img src="assets/20211110_164051.jpg" alt="Kotłownia" class="w-full h-48 object-cover">
+        </div>
+        <div class="rounded-lg overflow-hidden shadow-md">
+          <img src="assets/IMG_20181013_095833.jpg" alt="Ogrzewanie podłogowe" class="w-full h-48 object-cover">
+        </div>
+        <div class="rounded-lg overflow-hidden shadow-md">
+          <img src="assets/IMG_20181105_135021.jpg" alt="Rozdzielacz" class="w-full h-48 object-cover">
+        </div>
+        <div class="rounded-lg overflow-hidden shadow-md">
+          <img src="assets/20211130_145939.jpg" alt="Kotłownia 2" class="w-full h-48 object-cover">
+        </div>
+        <div class="rounded-lg overflow-hidden shadow-md">
+          <img src="assets/20211130_145949.jpg" alt="Rozdzielacz 2" class="w-full h-48 object-cover">
+        </div>
+        <div class="rounded-lg overflow-hidden shadow-md">
+          <img src="assets/20211221_163405.jpg" alt="Ogrzewanie 2" class="w-full h-48 object-cover">
+        </div>
+        <div class="rounded-lg overflow-hidden shadow-md">
+          <img src="assets/20200520_150026.jpg" alt="Rekuperacja" class="w-full h-48 object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Why choose us section -->
+  <section id="why" class="py-16 bg-gray-100">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-green-700 mb-10">Dlaczego my?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="mb-4 flex justify-center text-green-700">
+            <!-- Icon 1 -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c2.28-2.28 6-4 6-4s3 6-1 10l-5 5-5-5C3 10 6 4 6 4s3.72 1.72 6 4z" />
+            </svg>
+          </div>
+          <h3 class="font-semibold text-green-700 mb-2">Doświadczenie</h3>
+          <p class="text-gray-700">Ponad 10 lat w branży instalacyjnej, z sukcesami w realizacji projektów różnej skali.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="mb-4 flex justify-center text-green-700">
+            <!-- Icon 2 -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 17l-4 4m0 0l4-4m-4 4h18m-4 0a4 4 0 100-8h-4a4 4 0 100 8z" />
+            </svg>
+          </div>
+          <h3 class="font-semibold text-green-700 mb-2">Terminowość</h3>
+          <p class="text-gray-700">Dbamy o dotrzymywanie ustalonych terminów i sprawny przebieg realizacji.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="mb-4 flex justify-center text-green-700">
+            <!-- Icon 3 -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a1 1 0 112 0v4h4V3a1 1 0 112 0v4c2.21 0 4 .79 4 4v7H4V11c0-3.21 1.79-4 4-4z" />
+            </svg>
+          </div>
+          <h3 class="font-semibold text-green-700 mb-2">Kompleksowość</h3>
+          <p class="text-gray-700">Oferujemy pełne wsparcie: od projektu, przez montaż, aż po serwis i doradztwo.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="mb-4 flex justify-center text-green-700">
+            <!-- Icon 4 -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.69 0-4 1.5-4 4s2.31 4 4 4 4-1.5 4-4-2.31-4-4-4z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 16v4M9 20h6" />
+            </svg>
+          </div>
+          <h3 class="font-semibold text-green-700 mb-2">Gwarancja jakości</h3>
+          <p class="text-gray-700">Korzystamy z najlepszych materiałów i nowoczesnych technologii, by zapewnić niezawodność i trwałość instalacji.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact section -->
+  <section id="contact" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-green-700 mb-6 text-center">Kontakt</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="space-y-4 text-lg">
+          <p><strong class="font-bold">Telefon:</strong> <a href="tel:+48578099019" class="text-green-700 hover:underline">+48 578 099 019</a></p>
+          <p><strong class="font-bold">E-mail:</strong> <a href="mailto:info@cieploeko.pl" class="text-green-700 hover:underline">info@cieploeko.pl</a></p>
+          <p><strong class="font-bold">NIP:</strong> 5223256650</p>
+          <p><strong class="font-bold">Obsługiwany obszar:</strong> Łódź, Warszawa i okolice</p>
+        </div>
+        <!-- Contact form -->
+        <form class="space-y-4">
+          <input type="text" placeholder="Imię i nazwisko" class="w-full p-3 border border-gray-300 rounded">
+          <input type="email" placeholder="Adres e-mail" class="w-full p-3 border border-gray-300 rounded">
+          <textarea placeholder="Wiadomość" class="w-full p-3 border border-gray-300 rounded h-40"></textarea>
+          <button type="submit" class="w-full bg-green-700 hover:bg-green-800 text-white py-3 px-6 rounded">Wyślij wiadomość</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <p class="mb-2">© 2025 Ciepło Eko. Wszelkie prawa zastrzeżone.</p>
+      <p><a href="#" class="underline hover:text-green-300">Polityka prywatności</a> | <a href="#" class="underline hover:text-green-300">RODO</a></p>
+    </div>
+  </footer>
+  <script>
+    const btn = document.getElementById('menuBtn');
+    const mobile = document.getElementById('mobileNav');
+    btn?.addEventListener('click', () => mobile.classList.toggle('hidden'));
+    mobile?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobile.classList.add('hidden')));
+  </script>
+</body>
+</html>
