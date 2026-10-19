@@ -34,7 +34,7 @@
     .eyebrow::before { content:""; width:26px; height:2px; background:currentColor; }
     h1,h2,h3,p { margin-top:0; }
     h1,h2,h3 { line-height:1.13; letter-spacing:-.045em; }
-    h1 { font-size:clamp(2.75rem,6.5vw,5.8rem); margin:19px 0 26px; font-weight:800; }
+    h1 { font-size:clamp(2.5rem,5.25vw,4.65rem); margin:19px 0 26px; font-weight:800; }
     h2 { font-size:clamp(2.05rem,4vw,3.35rem); font-weight:800; margin:15px 0 20px; }
     h3 { font-size:1.2rem; font-weight:800; }
     .lead { color:var(--muted); font-size:1.1rem; max-width:630px; }
@@ -173,7 +173,7 @@
       .container { width:min(100% - 34px,1160px); } .section { padding:70px 0; }
       .header-inner { min-height:68px; } .brand img { width:43px; height:43px; }
       .hero .container { padding-top:50px; padding-bottom:50px; gap:35px; }
-      h1 { font-size:clamp(2.45rem,12vw,3.5rem); } .hero-copy p { font-size:1rem; }
+      h1 { font-size:clamp(2.1rem,10vw,3rem); } .hero-copy p { font-size:1rem; }
       .hero-note { margin-top:30px; }
       .hero-art { height:325px; margin-left:12px; } .hero-floating { left:-15px; bottom:17px; max-width:225px; padding:15px 17px; }
       .hero-actions .button { width:100%; }
@@ -190,6 +190,26 @@
       .footer-inner { align-items:flex-start; flex-direction:column; }
     }
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none!important; animation:none!important; } }
+    .partners { background:#fff; }
+    .brands-heading { margin-left:auto; margin-right:auto; text-align:center; }
+    .brands-heading .eyebrow { justify-content:center; }
+    .brands-heading p { margin-left:auto; margin-right:auto; }
+    .brand-grid { list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:15px; }
+    .brand-grid li { background:#fff; border:1px solid var(--stroke); min-height:102px; border-radius:9px; display:grid; place-items:center; padding:19px; }
+    .brand-grid img { max-width:100%; max-height:56px; width:auto; height:auto; object-fit:contain; filter:grayscale(1); opacity:.7; transition:filter .2s,opacity .2s; }
+    .brand-grid li:hover img { filter:none; opacity:1; }
+    .project { cursor:zoom-in; margin:0; }
+    .project:focus-visible { outline:3px solid #47ae7d; outline-offset:3px; }
+    .gallery-lightbox { position:fixed; width:100vw; max-width:100vw; height:100vh; max-height:100vh; inset:0; border:0; padding:18px; background:#101b1c; color:#fff; margin:0; }
+    .gallery-lightbox::backdrop { background:rgba(0,0,0,.89); }
+    .lightbox-toolbar { display:flex; justify-content:space-between; align-items:center; width:min(1100px,100%); margin:0 auto 10px; font-size:.88rem; font-weight:700; color:#bfd5d0; }
+    .lightbox-toolbar button,.lightbox-image-wrap button { border:0; background:#ffffff1c; color:white; border-radius:50%; width:44px; height:44px; display:grid; place-items:center; font-size:1.65rem; cursor:pointer; }
+    .lightbox-toolbar button:hover,.lightbox-image-wrap button:hover { background:#ffffff44; }
+    .lightbox-image-wrap { display:flex; align-items:center; justify-content:center; gap:12px; max-height:calc(100vh - 135px); }
+    .lightbox-image-wrap img { max-height:calc(100vh - 140px); max-width:min(calc(100vw - 160px),1000px); width:auto; height:auto; object-fit:contain; }
+    .gallery-lightbox p { text-align:center; margin:12px 0; font-size:.9rem; }
+    @media(max-width:830px) { .brand-grid { grid-template-columns:repeat(4,minmax(0,1fr)); } }
+    @media(max-width:560px) { .brand-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .gallery-lightbox { padding:12px; } .lightbox-image-wrap { gap:3px; } .lightbox-image-wrap img { max-width:calc(100vw - 112px); max-height:calc(100vh - 140px); } .lightbox-image-wrap button { width:40px; height:40px; flex:none; } } 
   </style>
   <script type="application/ld+json">
   {
@@ -208,19 +228,11 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="#start" class="brand" aria-label="Ciepło Eko — strona główna"><img src="assets/logo.png" alt="" width="49" height="49"><span>Ciepło <span>Eko</span></span></a>
-      <nav class="desktop-nav" aria-label="Nawigacja główna">
-        <a href="#uslugi">Usługi</a>
-        <a href="#o-nas">O nas</a>
-        <a href="#loxone">Smart Home</a>
-        <a href="#realizacje">Realizacje</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
+      <nav class="desktop-nav" aria-label="Nawigacja główna"><a href="#o-nas">O nas</a><a href="#uslugi">Usługi</a><a href="#realizacje">Realizacje</a><a href="#why">Dlaczego my</a><a href="#kontakt">Kontakt</a></nav>
       <a href="#kontakt" class="button button-primary header-cta">Zapytaj o wycenę <span class="arrow" aria-hidden="true">↗</span></a>
       <button class="menu-toggle" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-nav">☰</button>
     </div>
-    <nav id="mobile-nav" class="mobile-nav container" aria-label="Nawigacja mobilna">
-      <a href="#uslugi">Usługi</a><a href="#o-nas">O nas</a><a href="#loxone">Smart Home</a><a href="#realizacje">Realizacje</a><a href="#kontakt">Kontakt</a>
-    </nav>
+    <nav id="mobile-nav" class="mobile-nav container" aria-label="Nawigacja mobilna"><a href="#o-nas">O nas</a><a href="#uslugi">Usługi</a><a href="#realizacje">Realizacje</a><a href="#why">Dlaczego my</a><a href="#kontakt">Kontakt</a></nav>
   </header>
 
   <main>
@@ -271,7 +283,7 @@
 
     <section class="section about" id="o-nas">
       <div class="container about-layout">
-        <div class="about-photo-wrap"><img class="about-photo" src="assets/20211110_164051.jpg" alt="Przykładowa realizacja instalacji grzewczej Ciepło Eko" loading="lazy"></div>
+        <div class="about-photo-wrap"><img class="about-photo" src="assets/projects/automatyka-szafa-04.webp" alt="Szafa sterownicza inteligentnego domu z okablowaniem i automatyką" loading="lazy" onerror="this.onerror=null;this.src='assets/20211110_164051.jpg'"></div>
         <div>
           <div class="eyebrow">Poznaj Ciepło Eko</div>
           <h2>Inżynierskie podejście do każdego projektu</h2>
@@ -313,29 +325,79 @@
           <p>Instalacje wykonane z dbałością o detal techniczny i czytelność rozwiązań. Poniżej fotografie z naszych prac.</p>
         </div>
         <div class="projects-grid">
-          <figure class="project"><img loading="lazy" src="assets/20211110_164051.jpg" alt="Kotłownia i instalacja grzewcza"><figcaption class="project-caption"><strong>Instalacja grzewcza</strong><span>Kotłownia</span></figcaption></figure>
-          <figure class="project"><img loading="lazy" src="assets/IMG_20181013_095833.jpg" alt="Rozprowadzenie ogrzewania podłogowego"><figcaption class="project-caption"><strong>Ogrzewanie podłogowe</strong><span>Instalacja w budynku</span></figcaption></figure>
-          <figure class="project"><img loading="lazy" src="assets/IMG_20181105_135021.jpg" alt="Rozdzielacz instalacji grzewczej"><figcaption class="project-caption"><strong>Rozdzielacz ogrzewania</strong><span>Instalacje sanitarne</span></figcaption></figure>
-          <figure class="project"><img loading="lazy" src="assets/20211130_145939.jpg" alt="Wyposażenie kotłowni"><figcaption class="project-caption"><strong>Wyposażenie kotłowni</strong><span>Technika grzewcza</span></figcaption></figure>
-          <figure class="project"><img loading="lazy" src="assets/20211130_145949.jpg" alt="Instalacja techniczna z armaturą"><figcaption class="project-caption"><strong>Armatura i rozdzielacze</strong><span>Wykonawstwo instalacji</span></figcaption></figure>
-          <figure class="project"><img loading="lazy" src="assets/20200520_150026.jpg" alt="Instalacja wentylacji"><figcaption class="project-caption"><strong>Wentylacja</strong><span>Instalacje techniczne</span></figcaption></figure>
+          <figure class="project" tabindex="0" role="button" aria-label="Powiększ zdjęcie"><img loading="lazy" src="assets/20211110_164051.jpg" alt="Kotłownia i instalacja grzewcza"><figcaption class="project-caption"><strong>Instalacja grzewcza</strong><span>Kotłownia</span></figcaption></figure>
+          <figure class="project" tabindex="0" role="button" aria-label="Powiększ zdjęcie"><img loading="lazy" src="assets/IMG_20181013_095833.jpg" alt="Rozprowadzenie ogrzewania podłogowego"><figcaption class="project-caption"><strong>Ogrzewanie podłogowe</strong><span>Instalacja w budynku</span></figcaption></figure>
+          <figure class="project" tabindex="0" role="button" aria-label="Powiększ zdjęcie"><img loading="lazy" src="assets/IMG_20181105_135021.jpg" alt="Rozdzielacz instalacji grzewczej"><figcaption class="project-caption"><strong>Rozdzielacz ogrzewania</strong><span>Instalacje sanitarne</span></figcaption></figure>
+          <figure class="project" tabindex="0" role="button" aria-label="Powiększ zdjęcie"><img loading="lazy" src="assets/20211130_145939.jpg" alt="Wyposażenie kotłowni"><figcaption class="project-caption"><strong>Wyposażenie kotłowni</strong><span>Technika grzewcza</span></figcaption></figure>
+          <figure class="project" tabindex="0" role="button" aria-label="Powiększ zdjęcie"><img loading="lazy" src="assets/20211130_145949.jpg" alt="Instalacja techniczna z armaturą"><figcaption class="project-caption"><strong>Armatura i rozdzielacze</strong><span>Wykonawstwo instalacji</span></figcaption></figure>
+          <figure class="project" tabindex="0" role="button" aria-label="Powiększ zdjęcie"><img loading="lazy" src="assets/20200520_150026.jpg" alt="Instalacja wentylacji"><figcaption class="project-caption"><strong>Wentylacja</strong><span>Instalacje techniczne</span></figcaption></figure>
+          <figure class="project" tabindex="0" role="button" aria-label="Powiększ zdjęcie: Grzejnik kanałowy"><img loading="lazy" src="assets/projects/grzejnik-kanalowy.webp" alt="Grzejnik kanałowy" onerror="this.closest('.project').remove()"><figcaption class="project-caption"><strong>Grzejnik kanałowy</strong><span>Instalacje grzewcze</span></figcaption></figure>
+          <figure class="project" tabindex="0" role="button" aria-label="Powiększ zdjęcie: Ogrzewanie podłogowe"><img loading="lazy" src="assets/projects/ogrzewanie-podlogowe-01.webp" alt="Ogrzewanie podłogowe" onerror="this.closest('.project').remove()"><figcaption class="project-caption"><strong>Ogrzewanie podłogowe</strong><span>Instalacje grzewcze</span></figcaption></figure>
+          <figure class="project" tabindex="0" role="button" aria-label="Powiększ zdjęcie: Instalacja kotłowni"><img loading="lazy" src="assets/projects/kotlownia-gazowa.webp" alt="Instalacja kotłowni" onerror="this.closest('.project').remove()"><figcaption class="project-caption"><strong>Instalacja kotłowni</strong><span>Technika grzewcza</span></figcaption></figure>
+          <figure class="project" tabindex="0" role="button" aria-label="Powiększ zdjęcie: Armatura łazienkowa"><img loading="lazy" src="assets/projects/lazienka-umywalki.webp" alt="Armatura łazienkowa" onerror="this.closest('.project').remove()"><figcaption class="project-caption"><strong>Armatura łazienkowa</strong><span>Instalacje sanitarne</span></figcaption></figure>
+          <figure class="project" tabindex="0" role="button" aria-label="Powiększ zdjęcie: Przewody instalacji zewnętrznej"><img loading="lazy" src="assets/projects/instalacje-zewnetrzne.webp" alt="Przewody instalacji zewnętrznej" onerror="this.closest('.project').remove()"><figcaption class="project-caption"><strong>Przewody instalacji zewnętrznej</strong><span>Instalacje techniczne</span></figcaption></figure>
+          <figure class="project" tabindex="0" role="button" aria-label="Powiększ zdjęcie: Szafa sterowania"><img loading="lazy" src="assets/projects/automatyka-szafa-01.webp" alt="Szafa sterowania" onerror="this.closest('.project').remove()"><figcaption class="project-caption"><strong>Szafa sterowania</strong><span>Automatyka budynkowa</span></figcaption></figure>
+          <figure class="project" tabindex="0" role="button" aria-label="Powiększ zdjęcie: Urządzenie techniczne"><img loading="lazy" src="assets/projects/pompa-ciepla.webp" alt="Urządzenie techniczne" onerror="this.closest('.project').remove()"><figcaption class="project-caption"><strong>Urządzenie techniczne</strong><span>Instalacje grzewcze</span></figcaption></figure>
+          <figure class="project" tabindex="0" role="button" aria-label="Powiększ zdjęcie: Rozdzielnica automatyki"><img loading="lazy" src="assets/projects/automatyka-szafa-02.webp" alt="Rozdzielnica automatyki" onerror="this.closest('.project').remove()"><figcaption class="project-caption"><strong>Rozdzielnica automatyki</strong><span>Automatyka budynkowa</span></figcaption></figure>
+          <figure class="project" tabindex="0" role="button" aria-label="Powiększ zdjęcie: Rozdzielnica elektryczna"><img loading="lazy" src="assets/projects/automatyka-szafa-03.webp" alt="Rozdzielnica elektryczna" onerror="this.closest('.project').remove()"><figcaption class="project-caption"><strong>Rozdzielnica elektryczna</strong><span>Instalacje elektryczne</span></figcaption></figure>
+          <figure class="project" tabindex="0" role="button" aria-label="Powiększ zdjęcie: Instalacja inteligentnego domu"><img loading="lazy" src="assets/projects/automatyka-szafa-04.webp" alt="Instalacja inteligentnego domu" onerror="this.closest('.project').remove()"><figcaption class="project-caption"><strong>Instalacja inteligentnego domu</strong><span>Automatyka budynkowa</span></figcaption></figure>
+          <figure class="project" tabindex="0" role="button" aria-label="Powiększ zdjęcie: Nowoczesna łazienka"><img loading="lazy" src="assets/projects/lazienka-wanna.webp" alt="Nowoczesna łazienka" onerror="this.closest('.project').remove()"><figcaption class="project-caption"><strong>Nowoczesna łazienka</strong><span>Instalacje sanitarne</span></figcaption></figure>
+          <figure class="project" tabindex="0" role="button" aria-label="Powiększ zdjęcie: Zbiornik buforowy i armatura"><img loading="lazy" src="assets/projects/bufor-kotlownia.webp" alt="Zbiornik buforowy i armatura" onerror="this.closest('.project').remove()"><figcaption class="project-caption"><strong>Zbiornik buforowy i armatura</strong><span>Technika grzewcza</span></figcaption></figure>
+          <figure class="project" tabindex="0" role="button" aria-label="Powiększ zdjęcie: Instalacja sanitarna łazienki"><img loading="lazy" src="assets/projects/lazienka-prysznic.webp" alt="Instalacja sanitarna łazienki" onerror="this.closest('.project').remove()"><figcaption class="project-caption"><strong>Instalacja sanitarna łazienki</strong><span>Instalacje sanitarne</span></figcaption></figure>
+          <figure class="project" tabindex="0" role="button" aria-label="Powiększ zdjęcie: Układanie ogrzewania podłogowego"><img loading="lazy" src="assets/projects/ogrzewanie-podlogowe-02.webp" alt="Układanie ogrzewania podłogowego" onerror="this.closest('.project').remove()"><figcaption class="project-caption"><strong>Układanie ogrzewania podłogowego</strong><span>Instalacje grzewcze</span></figcaption></figure>
+          <figure class="project" tabindex="0" role="button" aria-label="Powiększ zdjęcie: Montaż wyposażenia sanitarnego"><img loading="lazy" src="assets/projects/sanitariaty.webp" alt="Montaż wyposażenia sanitarnego" onerror="this.closest('.project').remove()"><figcaption class="project-caption"><strong>Montaż wyposażenia sanitarnego</strong><span>Instalacje sanitarne</span></figcaption></figure>
+          <figure class="project" tabindex="0" role="button" aria-label="Powiększ zdjęcie: Instalacja rurowa"><img loading="lazy" src="assets/projects/instalacja-wodna.webp" alt="Instalacja rurowa" onerror="this.closest('.project').remove()"><figcaption class="project-caption"><strong>Instalacja rurowa</strong><span>Instalacje sanitarne</span></figcaption></figure>
         </div>
       </div>
     </section>
 
-    <section class="section process" id="wspolpraca">
+<section class="section process" id="why">
       <div class="container">
         <div class="section-heading">
-          <div class="eyebrow">Jak pracujemy</div>
-          <h2>Od pierwszej rozmowy do gotowej instalacji</h2>
-          <p>Jasny proces współpracy pomaga uniknąć przypadkowych decyzji i dobrze zaplanować realizację.</p>
+          <div class="eyebrow">Nasze atuty</div>
+          <h2>Dlaczego my?</h2>
+          <p>Od projektu po uruchomienie — jeden zespół, który rozumie, jak instalacje elektryczne, sanitarne i automatyka powinny współpracować.</p>
         </div>
         <div class="steps">
-          <div class="step"><div class="step-num">01</div><h3>Rozmowa</h3><p>Poznajemy potrzeby, zakres prac i specyfikę budynku.</p></div>
-          <div class="step"><div class="step-num">02</div><h3>Rozwiązanie</h3><p>Dobieramy technologie i ustalamy odpowiedni zakres instalacji.</p></div>
-          <div class="step"><div class="step-num">03</div><h3>Realizacja</h3><p>Wykonujemy instalacje z uwzględnieniem pozostałych branż.</p></div>
-          <div class="step"><div class="step-num">04</div><h3>Uruchomienie</h3><p>Sprawdzamy działanie i przekazujemy system do użytkowania.</p></div>
+          <div class="step"><div class="step-num">01</div><h3>Doświadczenie</h3><p>Ponad 10 lat praktyki w realizacji instalacji technicznych.</p></div>
+          <div class="step"><div class="step-num">02</div><h3>Kompleksowość</h3><p>Projektowanie, dobór, montaż, uruchomienie i wsparcie.</p></div>
+          <div class="step"><div class="step-num">03</div><h3>Współpraca systemów</h3><p>Łączymy instalacje sanitarne, elektryczne i inteligentny dom.</p></div>
+          <div class="step"><div class="step-num">04</div><h3>Jakość</h3><p>Stawiamy na sprawdzone rozwiązania, przejrzyste ustalenia i staranne wykonanie.</p></div>
         </div>
+      </div>
+    </section>
+
+    <section class="section partners" id="marki">
+      <div class="container">
+        <div class="section-heading brands-heading">
+          <div class="eyebrow">Sprawdzone technologie</div>
+          <h2>Marki, z którymi pracujemy</h2>
+          <p>W naszych projektach wykorzystujemy rozwiązania renomowanych producentów urządzeń i systemów instalacyjnych.</p>
+        </div>
+        <ul class="brand-grid" aria-label="Marki, z którymi pracujemy">
+          <li><img src="assets/armacell.jpg" alt="Armacell" loading="lazy" decoding="async"></li>
+          <li><img src="assets/atlantic.jpg" alt="Atlantic" loading="lazy" decoding="async"></li>
+          <li><img src="assets/BOSCH.jpg" alt="Bosch" loading="lazy" decoding="async"></li>
+          <li><img src="assets/Buderus.png" alt="Buderus" loading="lazy" decoding="async"></li>
+          <li><img src="assets/Caleffi.jpg" alt="Caleffi" loading="lazy" decoding="async"></li>
+          <li><img src="assets/Ferro.jpg" alt="Ferro" loading="lazy" decoding="async"></li>
+          <li><img src="assets/Geberit.jpg" alt="Geberit" loading="lazy" decoding="async"></li>
+          <li><img src="assets/Gebo.jpg" alt="Gebo" loading="lazy" decoding="async"></li>
+          <li><img src="assets/Grohe.jpg" alt="Grohe" loading="lazy" decoding="async"></li>
+          <li><img src="assets/KAN.jpg" alt="KAN" loading="lazy" decoding="async"></li>
+          <li><img src="assets/MYCOND.png" alt="Mycond" loading="lazy" decoding="async"></li>
+          <li><img src="assets/Nibe.jpg" alt="NIBE" loading="lazy" decoding="async"></li>
+          <li><img src="assets/Panasonic-Akredytowany-Instalator-WHITE1.png" alt="Panasonic" loading="lazy" decoding="async"></li>
+          <li><img src="assets/Reflex.jpg" alt="Reflex" loading="lazy" decoding="async"></li>
+          <li><img src="assets/Rehau.png" alt="Rehau" loading="lazy" decoding="async"></li>
+          <li><img src="assets/Salus.jpg" alt="Salus" loading="lazy" decoding="async"></li>
+          <li><img src="assets/Vaillant.jpg" alt="Vaillant" loading="lazy" decoding="async"></li>
+          <li><img src="assets/Valvex.jpg" alt="Valvex" loading="lazy" decoding="async"></li>
+          <li><img src="assets/Walraven.jpg" alt="Walraven" loading="lazy" decoding="async"></li>
+          <li><img src="assets/Wavin.jpg" alt="Wavin" loading="lazy" decoding="async"></li>
+          <li><img src="assets/Wilo.jpg" alt="Wilo" loading="lazy" decoding="async"></li>
+          <li><img src="assets/Zehnder.jpg" alt="Zehnder" loading="lazy" decoding="async"></li>
+        </ul>
       </div>
     </section>
 
@@ -366,6 +428,12 @@
     </section>
   </main>
 
+  <dialog id="gallery-lightbox" class="gallery-lightbox" aria-label="Powiększone zdjęcie realizacji">
+    <div class="lightbox-toolbar"><span id="lightbox-counter">1 / 1</span><button type="button" class="lightbox-close" aria-label="Zamknij powiększenie">✕</button></div>
+    <div class="lightbox-image-wrap"><button type="button" class="lightbox-prev" aria-label="Poprzednie zdjęcie">‹</button><img id="lightbox-image" alt=""><button type="button" class="lightbox-next" aria-label="Następne zdjęcie">›</button></div>
+    <p id="lightbox-caption"></p>
+  </dialog>
+
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>© <span id="year">2026</span> Ciepło Eko. Wszystkie prawa zastrzeżone.</p>
@@ -390,6 +458,39 @@
         toggle.textContent = '☰';
       }));
       document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Galeria realizacji — powiększanie, nawigacja klawiaturą i zamykanie.
+      const dialog = document.getElementById('gallery-lightbox');
+      const lightboxImg = document.getElementById('lightbox-image');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+      const counter = document.getElementById('lightbox-counter');
+      const availableProjects = () => [...document.querySelectorAll('.projects-grid .project')].filter(el => el.querySelector('img')?.naturalWidth > 0);
+      let galleryIndex = 0;
+      const showPhoto = () => {
+        const cards = availableProjects();
+        if (!cards.length) return;
+        galleryIndex = (galleryIndex + cards.length) % cards.length;
+        const photo = cards[galleryIndex].querySelector('img');
+        lightboxImg.src = photo.currentSrc || photo.src;
+        lightboxImg.alt = photo.alt;
+        lightboxCaption.textContent = cards[galleryIndex].querySelector('.project-caption strong')?.textContent || photo.alt;
+        counter.textContent = (galleryIndex+1) + ' / ' + cards.length;
+      };
+      document.querySelectorAll('.projects-grid .project').forEach(card => {
+        const open = () => {
+          galleryIndex = availableProjects().indexOf(card);
+          if (galleryIndex < 0) return;
+          showPhoto();
+          if (!dialog.open) dialog.showModal();
+        };
+        card.addEventListener('click',open);
+        card.addEventListener('keydown',event => { if(event.key==='Enter'||event.key===' ') { event.preventDefault(); open(); }});
+      });
+      dialog.querySelector('.lightbox-close').addEventListener('click',()=>dialog.close());
+      dialog.querySelector('.lightbox-prev').addEventListener('click',()=>{ galleryIndex--; showPhoto(); });
+      dialog.querySelector('.lightbox-next').addEventListener('click',()=>{ galleryIndex++; showPhoto(); });
+      dialog.addEventListener('click',event=>{ if(event.target===dialog) dialog.close(); });
+      dialog.addEventListener('keydown',event=>{ if(event.key==='ArrowRight'){ galleryIndex++; showPhoto(); } if(event.key==='ArrowLeft'){ galleryIndex--; showPhoto(); }});
       const form = document.getElementById('contactForm');
       const msg = document.getElementById('formMsg');
       form.addEventListener('submit', async e => {
