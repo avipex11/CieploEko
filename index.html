@@ -292,6 +292,22 @@
     .gallery-lightbox p { text-align:center; margin:12px 0; font-size:.9rem; }
     @media(max-width:830px) { .brand-grid { grid-template-columns:repeat(4,minmax(0,1fr)); } }
     @media(max-width:560px) { .brand-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .gallery-lightbox { padding:12px; } .lightbox-image-wrap { gap:3px; } .lightbox-image-wrap img { max-width:calc(100vw - 112px); max-height:calc(100vh - 140px); } .lightbox-image-wrap button { width:40px; height:40px; flex:none; } } 
+
+    .premium-audience { padding:66px 0 72px; background:var(--paper); }
+    .premium-audience .section-heading { margin-bottom:29px; }
+    .premium-audience .section-heading p { max-width:770px; }
+    .premium-audience-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:19px; }
+    .premium-audience-card { display:flex; flex-direction:column; align-items:flex-start; min-height:246px; padding:31px; background:white; border:1px solid #d9e7df; border-radius:12px; }
+    .premium-audience-card.is-architect { background:#153b36; border-color:#153b36; color:#fff; }
+    .premium-audience-card small { color:var(--forest); text-transform:uppercase; letter-spacing:.1em; font-size:.73rem; font-weight:800; margin-bottom:14px; }
+    .premium-audience-card.is-architect small { color:#a2e5ba; }
+    .premium-audience-card h3 { font-size:1.46rem; letter-spacing:-.035em; margin:0 0 10px; }
+    .premium-audience-card p { font-size:.88rem; color:var(--muted); line-height:1.7; margin-bottom:20px; }
+    .premium-audience-card.is-architect p { color:#c0d9ce; }
+    .premium-audience-card a { margin-top:auto; font-weight:800; color:var(--forest); font-size:.86rem; }
+    .premium-audience-card.is-architect a { color:#c7f4d4; }
+    .premium-audience-card a:hover { text-decoration:underline; text-underline-offset:4px; }
+    @media(max-width:700px) { .premium-audience-grid { grid-template-columns:1fr; } .premium-audience { padding:55px 0; } .premium-audience-card { min-height:0; padding:26px 23px; } }
   </style>
   <script type="application/ld+json">
   {
@@ -324,7 +340,7 @@
         <div class="hero-copy">
           <div class="eyebrow">Nowoczesna inżynieria budynków</div>
           <h1>Technologia, która tworzy <em>komfort.</em></h1>
-          <p>Projektujemy i wykonujemy instalacje grzewcze, sanitarne, elektryczne oraz systemy inteligentnego domu. Jeden partner — od koncepcji po uruchomienie.</p>
+          <p>Projektujemy i wykonujemy instalacje grzewcze, sanitarne, elektryczne i Smart Home. Mamy wieloletnie doświadczenie w wymagających realizacjach dla domów oraz rezydencji o wysokim standardzie.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#kontakt">Porozmawiajmy o projekcie <span class="arrow" aria-hidden="true">↗</span></a>
             <a class="button button-outline" href="#uslugi">Poznaj nasze usługi <span class="arrow" aria-hidden="true">↓</span></a>
@@ -370,18 +386,42 @@
         <div>
           <div class="eyebrow">Poznaj Ciepło Eko</div>
           <h2>Inżynierskie podejście do każdego projektu</h2>
-          <p>Tworzymy funkcjonalne instalacje dla domów i obiektów użytkowych. Zwracamy uwagę nie tylko na dobór urządzeń, ale też na współpracę wszystkich systemów, wygodę obsługi i przyszłą eksploatację.</p>
+          <p>Wieloletnie doświadczenie w wymagających technicznie domach i rezydencjach pozwala nam łączyć instalacje z estetyką architektury. Współpracujemy z inwestorami i pracowniami projektowymi, dbając o koordynację branż, jakość detali oraz przyszłą eksploatację.</p>
           <ul class="tick-list">
             <li>Rozwiązania dobierane do rzeczywistych potrzeb obiektu</li>
             <li>Koordynacja instalacji sanitarnych, elektrycznych i automatyki</li>
             <li>Sprawdzone technologie i fachowy montaż</li>
-            <li>Przejrzysty kontakt na każdym etapie realizacji</li>
+            <li>Współpraca z architektami i projektantami wnętrz</li>
           </ul>
-          <a class="button button-outline" href="#realizacje">Zobacz wybrane realizacje <span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="button button-outline" href="#realizacje">Zobacz nasze realizacje <span class="arrow" aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
 
+
+    <section class="premium-audience" id="domy-premium">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Doświadczenie w wymagających inwestycjach</div>
+          <h2>Domy premium i indywidualne projekty</h2>
+          <p>Przy rezydencjach i indywidualnie projektowanych domach liczą się nie tylko urządzenia: równie ważna jest koordynacja instalacji, ich dyskretna integracja z architekturą i precyzja wykonania.</p>
+        </div>
+        <div class="premium-audience-grid">
+          <article class="premium-audience-card">
+            <small>Dla właścicieli domów</small>
+            <h3>Rezydencje i domy o wysokim standardzie</h3>
+            <p>Ogrzewanie, chłodzenie, wentylacja, elektryka i inteligentny dom — spójne rozwiązania dla wymagających inwestycji.</p>
+            <a href="domy-rezydencje-premium/">Zobacz ofertę dla domów premium ↗</a>
+          </article>
+          <article class="premium-audience-card is-architect">
+            <small>Dla partnerów projektowych</small>
+            <h3>Współpraca z pracowniami architektonicznymi</h3>
+            <p>Praktyczne doświadczenie, uzgodnienia międzybranżowe i wykonawstwo uwzględniające założenia architektoniczne.</p>
+            <a href="dla-architektow/">Zobacz ofertę dla architektów ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
     <section class="section loxone" id="loxone">
       <div class="container loxone-layout">
         <div>
