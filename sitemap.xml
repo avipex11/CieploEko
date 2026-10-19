@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://cieploeko.pl/</loc>
-  </url>
+  <url><loc>https://cieploeko.pl/</loc></url>
+  <url><loc>https://cieploeko.pl/klimatyzacja/</loc></url>
+  <url><loc>https://cieploeko.pl/pompy-ciepla-i-ogrzewanie/</loc></url>
+  <url><loc>https://cieploeko.pl/wentylacja-i-rekuperacja/</loc></url>
+  <url><loc>https://cieploeko.pl/instalacje-elektryczne/</loc></url>
+  <url><loc>https://cieploeko.pl/inteligentny-dom-loxone/</loc></url>
+  <url><loc>https://cieploeko.pl/instalacje-wodno-kanalizacyjne/</loc></url>
 </urlset>
