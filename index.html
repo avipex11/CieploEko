@@ -1,330 +1,413 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ciepło Eko | Instalacje grzewcze, wod-kan, wentylacja, klimatyzacja</title>
-  <meta name="description" content="Ciepło Eko – profesjonalne instalacje grzewcze, wodno-kanalizacyjne, wentylacyjne, klimatyzacyjne i uzdatnianie wody. Łódź, Warszawa i okolice." />
-  <meta property="og:title" content="Ciepło Eko – Instalacje dla Twojego domu" />
-  <meta property="og:description" content="Ponad 10 lat doświadczenia. Kompleksowo: projekt, montaż, serwis." />
-  <meta property="og:image" content="assets/logo.png" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://cieploeko.pl" />
-
-  <!-- Favicons -->
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png" />
-  <link rel="shortcut icon" href="assets/favicon.ico" />
-
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50:'#f0f9f4',100:'#d6f0e2',200:'#aee1c6',300:'#7ecfa6',
-              400:'#4fbd86',500:'#2fa86e',600:'#23885a',700:'#1b6c49',800:'#134f36',900:'#0b2f21'
-            }
-          },
-          boxShadow:{ soft:'0 10px 25px rgba(0,0,0,.08)' }
-        }
-      }
-    }
-  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10272b">
+  <title>Ciepło Eko | Instalacje sanitarne, elektryczne i inteligentny dom – Warszawa</title>
+  <meta name="description" content="Ciepło Eko: projektowanie i montaż instalacji grzewczych, sanitarnych, elektrycznych, klimatyzacji oraz inteligentnych domów LOXONE. Warszawa, Łódź i okolice.">
+  <link rel="canonical" href="https://cieploeko.pl/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:title" content="Ciepło Eko – Technologia, która tworzy komfort">
+  <meta property="og:description" content="Instalacje sanitarne, klimatyzacja, elektryka i inteligentny dom LOXONE. Od projektu po uruchomienie.">
+  <meta property="og:url" content="https://cieploeko.pl/">
+  <meta property="og:image" content="https://cieploeko.pl/assets/hero-bg.jpg">
+  <link rel="icon" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    [data-animate]{opacity:.0;transform:translateY(12px);transition:all .6s ease}
-    [data-animate].in{opacity:1;transform:none}
-    .lightbox:target{display:block}
+    :root { --ink:#10272b; --ink-soft:#31484a; --muted:#627678; --forest:#176c55; --forest-dark:#10513f; --mint:#ccedd9; --paper:#f5f8f5; --white:#fff; --stroke:#dce8e2; --shadow:0 22px 50px rgba(12,42,37,.10); }
+    *,*::before,*::after { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:90px; }
+    body { margin:0; font-family:Manrope,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:#fff; line-height:1.65; -webkit-font-smoothing:antialiased; }
+    img { max-width:100%; display:block; }
+    a { color:inherit; text-decoration:none; }
+    button,input,textarea { font:inherit; }
+    button,a,input,textarea { -webkit-tap-highlight-color:transparent; }
+    :focus-visible { outline:3px solid #47ae7d; outline-offset:4px; }
+    .container { width:min(1160px,calc(100% - 44px)); margin:auto; }
+    .eyebrow { display:inline-flex; align-items:center; gap:10px; color:var(--forest); font-size:.76rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+    .eyebrow::before { content:""; width:26px; height:2px; background:currentColor; }
+    h1,h2,h3,p { margin-top:0; }
+    h1,h2,h3 { line-height:1.13; letter-spacing:-.045em; }
+    h1 { font-size:clamp(2.75rem,6.5vw,5.8rem); margin:19px 0 26px; font-weight:800; }
+    h2 { font-size:clamp(2.05rem,4vw,3.35rem); font-weight:800; margin:15px 0 20px; }
+    h3 { font-size:1.2rem; font-weight:800; }
+    .lead { color:var(--muted); font-size:1.1rem; max-width:630px; }
+    .section { padding:100px 0; }
+    .section-heading { margin-bottom:43px; max-width:790px; }
+    .section-heading p { color:var(--muted); max-width:630px; }
+    .button { border:1px solid transparent; display:inline-flex; align-items:center; justify-content:center; gap:13px; min-height:54px; padding:12px 25px; border-radius:8px; font-size:.92rem; font-weight:800; cursor:pointer; transition:background .2s,color .2s,transform .2s; }
+    .button:hover { transform:translateY(-2px); }
+    .button-primary { background:#237b60; color:white; }
+    .button-primary:hover { background:var(--forest-dark); }
+    .button-outline { border-color:#cbdcd6; color:var(--ink); background:#fff; }
+    .button-outline:hover { border-color:var(--forest); }
+    .button-light { background:#fff; color:var(--forest-dark); }
+    .button-light:hover { background:#e7f6ec; }
+    .arrow { font-size:1.15rem; line-height:1; }
+    .site-header { position:sticky; z-index:50; top:0; background:rgba(255,255,255,.96); border-bottom:1px solid #ecf0ee; backdrop-filter:blur(14px); }
+    .header-inner { min-height:78px; display:flex; align-items:center; justify-content:space-between; gap:26px; }
+    .brand { display:flex; align-items:center; gap:11px; font-size:1.05rem; font-weight:800; white-space:nowrap; letter-spacing:-.04em; }
+    .brand img { width:49px; height:49px; object-fit:contain; }
+    .brand span span { color:var(--forest); }
+    .desktop-nav { display:flex; align-items:center; gap:27px; margin-left:auto; }
+    .desktop-nav a { font-size:.83rem; font-weight:700; color:var(--ink-soft); transition:color .2s; }
+    .desktop-nav a:hover { color:var(--forest); }
+    .header-cta { min-height:43px; padding:9px 17px; font-size:.79rem; }
+    .menu-toggle { display:none; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid var(--stroke); background:white; border-radius:8px; font-size:1.5rem; color:var(--ink); cursor:pointer; }
+    .mobile-nav { display:none; border-top:1px solid var(--stroke); padding:9px 0 18px; }
+    .mobile-nav a { display:block; padding:11px 0; font-size:.94rem; font-weight:700; }
+    .mobile-nav.is-open { display:block; }
+    .hero { background:var(--paper); position:relative; overflow:hidden; }
+    .hero .container { display:grid; grid-template-columns:1.04fr .96fr; align-items:center; min-height:660px; gap:64px; padding-top:65px; padding-bottom:72px; }
+    .hero h1 em { font-style:normal; color:var(--forest); }
+    .hero-copy p { font-size:1.08rem; color:var(--ink-soft); max-width:530px; margin-bottom:33px; }
+    .hero-actions { display:flex; gap:12px; flex-wrap:wrap; }
+    .hero-note { margin-top:42px; display:flex; gap:11px; align-items:center; color:#526b66; font-size:.79rem; font-weight:700; }
+    .hero-note .dot { display:inline-block; height:9px; width:9px; background:#2fa879; border-radius:50%; box-shadow:0 0 0 5px #d7eddd; }
+    .hero-art { position:relative; height:550px; }
+    .hero-photo { width:100%; height:100%; object-fit:cover; border-radius:11px; box-shadow:var(--shadow); }
+    .hero-art::before { content:""; position:absolute; z-index:1; inset:0; border-radius:11px; background:linear-gradient(180deg,transparent 44%,rgba(6,40,32,.48)); pointer-events:none; }
+    .hero-floating { position:absolute; z-index:2; left:-30px; bottom:30px; background:white; border-radius:10px; padding:20px 24px; max-width:270px; box-shadow:0 18px 35px rgba(0,0,0,.14); }
+    .hero-floating strong { display:block; font-size:.96rem; line-height:1.4; }
+    .hero-floating small { display:block; font-size:.7rem; color:var(--forest); font-weight:800; text-transform:uppercase; letter-spacing:.12em; margin-bottom:7px; }
+    .trust-strip { background:var(--ink); color:#e8f5ee; }
+    .trust-grid { display:grid; grid-template-columns:repeat(3,1fr); }
+    .trust-item { padding:25px 29px; border-right:1px solid rgba(255,255,255,.12); display:flex; align-items:center; gap:15px; }
+    .trust-item:first-child { padding-left:0; }
+    .trust-item:last-child { border:0; }
+    .trust-icon { width:40px; height:40px; border-radius:9px; background:#2d5248; flex:none; display:grid; place-items:center; font-size:1.05rem; font-weight:800; color:#c3f1cf; }
+    .trust-item strong { display:block; font-size:.9rem; line-height:1.35; }
+    .trust-item span { display:block; font-size:.74rem; color:#afcbc0; }
+    .services { background:white; }
+    .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .service-card { position:relative; padding:29px 28px 32px; min-height:245px; background:#fff; border:1px solid var(--stroke); border-radius:11px; transition:box-shadow .2s,transform .2s,border-color .2s; }
+    .service-card:hover { transform:translateY(-4px); box-shadow:var(--shadow); border-color:#a3cbb7; }
+    .service-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:25px; }
+    .service-symbol { width:49px; height:49px; border-radius:12px; background:#e9f5ed; color:var(--forest); display:grid; place-items:center; font-size:1.55rem; font-weight:800; }
+    .service-index { color:#9aaea7; font-size:.78rem; font-weight:800; letter-spacing:.13em; }
+    .service-card h3 { margin-bottom:11px; }
+    .service-card p { font-size:.87rem; line-height:1.7; color:var(--muted); margin-bottom:0; }
+    .service-card.featured { background:#e9f6ee; border-color:#c7e8d5; }
+    .service-card.featured .service-symbol { background:var(--forest); color:white; }
+    .about { background:var(--paper); }
+    .about-layout { display:grid; grid-template-columns:.9fr 1.1fr; gap:90px; align-items:center; }
+    .about-photo-wrap { position:relative; }
+    .about-photo { height:480px; width:100%; object-fit:cover; border-radius:11px; }
+    .about-photo-wrap::after { content:""; position:absolute; width:34%; height:35%; bottom:-20px; right:-19px; border:11px solid var(--paper); background:var(--forest); border-radius:10px; z-index:-1; }
+    .about h2 { max-width:610px; }
+    .about p { color:var(--muted); }
+    .tick-list { padding:0; margin:28px 0 30px; list-style:none; display:grid; gap:14px; }
+    .tick-list li { display:flex; align-items:flex-start; gap:12px; font-weight:700; font-size:.9rem; }
+    .tick-list li::before { content:"✓"; width:24px; height:24px; background:#d9eee1; color:var(--forest-dark); font-size:.8rem; flex:none; border-radius:50%; display:grid; place-items:center; }
+    .loxone { background:#153b36; color:white; position:relative; overflow:hidden; }
+    .loxone::after { content:""; position:absolute; width:450px; height:450px; border:1px solid rgba(255,255,255,.08); right:-150px; top:-190px; border-radius:50%; box-shadow:0 0 0 90px rgba(255,255,255,.025),0 0 0 180px rgba(255,255,255,.02); pointer-events:none; }
+    .loxone-layout { display:grid; grid-template-columns:1.1fr .9fr; gap:85px; align-items:center; position:relative; z-index:1; }
+    .loxone .eyebrow { color:#a4e8bd; }
+    .loxone h2 { font-size:clamp(2.2rem,4.6vw,3.8rem); max-width:650px; }
+    .loxone p { color:#c1d9d0; max-width:560px; }
+    .loxone .status { display:inline-flex; align-items:center; gap:10px; padding:9px 13px; margin-bottom:25px; background:rgba(219,246,225,.10); border:1px solid rgba(227,255,233,.18); border-radius:6px; font-size:.79rem; font-weight:800; color:#d7f4e1; }
+    .loxone .status::before { content:""; width:8px; height:8px; background:#85e6a9; border-radius:50%; }
+    .loxone-actions { margin-top:30px; }
+    .automation-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+    .automation-item { min-height:135px; display:flex; flex-direction:column; justify-content:space-between; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.14); padding:20px; border-radius:10px; }
+    .automation-item span { color:#c4e8d2; font-weight:800; font-size:1.7rem; line-height:1; }
+    .automation-item strong { font-size:.91rem; }
+    .projects { background:#fff; }
+    .projects-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:19px; }
+    .project { overflow:hidden; border-radius:11px; background:var(--paper); border:1px solid #e6ece8; }
+    .project img { width:100%; height:242px; object-fit:cover; transition:transform .5s; }
+    .project:hover img { transform:scale(1.04); }
+    .project-caption { padding:19px 22px 21px; }
+    .project-caption strong { display:block; font-size:.94rem; }
+    .project-caption span { color:var(--muted); font-size:.75rem; font-weight:700; }
+    .project-more { text-align:center; margin-top:37px; }
+    .process { background:var(--paper); }
+    .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:30px; }
+    .step-num { width:53px; height:53px; border:1px solid #bfd4c8; color:var(--forest); border-radius:50%; display:grid; place-items:center; font-size:.92rem; font-weight:800; margin-bottom:22px; background:white; }
+    .step h3 { margin-bottom:10px; }
+    .step p { color:var(--muted); font-size:.85rem; }
+    .contact { background:#fff; }
+    .contact-layout { display:grid; grid-template-columns:.88fr 1.12fr; gap:80px; align-items:start; }
+    .contact h2 { max-width:480px; }
+    .contact-intro { color:var(--muted); margin-bottom:34px; }
+    .contact-info { display:grid; gap:19px; }
+    .contact-info small { color:var(--muted); display:block; font-weight:800; letter-spacing:.08em; font-size:.69rem; text-transform:uppercase; margin-bottom:4px; }
+    .contact-info a { color:var(--ink); font-weight:800; font-size:1.05rem; word-break:break-word; }
+    .contact-info a:hover { color:var(--forest); }
+    .contact-info p { margin:0; font-size:.95rem; font-weight:700; }
+    .contact-form { background:var(--paper); padding:36px; border-radius:12px; }
+    .contact-form h3 { font-size:1.45rem; margin-bottom:5px; }
+    .contact-form > p { color:var(--muted); font-size:.85rem; margin-bottom:24px; }
+    .form-field { margin-bottom:17px; }
+    .form-field label { display:block; font-size:.78rem; font-weight:800; margin-bottom:7px; }
+    .form-field input,.form-field textarea { border:1px solid #cdded4; outline:none; background:white; width:100%; border-radius:7px; padding:13px 15px; color:var(--ink); font-size:.9rem; }
+    .form-field input:focus,.form-field textarea:focus { border-color:var(--forest); box-shadow:0 0 0 3px rgba(35,123,96,.11); }
+    .form-field textarea { min-height:136px; resize:vertical; }
+    .form-submit { width:100%; }
+    .form-message { margin:13px 0 0; font-size:.82rem; min-height:20px; color:var(--forest); }
+    .form-message.error { color:#a12835; }
+    .site-footer { background:#0e2525; color:#c7d9d3; padding:39px 0; }
+    .footer-inner { display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap; }
+    .footer-inner p { margin:0; font-size:.77rem; }
+    .footer-links { display:flex; gap:18px; font-size:.78rem; font-weight:700; }
+    .footer-links a:hover { color:#fff; }
+    @media(max-width:1060px) { .desktop-nav { gap:16px; } .hero .container { gap:35px; } .header-cta { display:none; } .about-layout,.loxone-layout { gap:48px; } }
+    @media(max-width:830px) {
+      .desktop-nav { display:none; } .menu-toggle { display:flex; }
+      .hero .container { grid-template-columns:1fr; min-height:0; gap:45px; padding-top:70px; }
+      .hero-copy { max-width:640px; } .hero-art { height:420px; }
+      .services-grid,.projects-grid { grid-template-columns:repeat(2,1fr); }
+      .about-layout,.loxone-layout,.contact-layout { grid-template-columns:1fr; gap:40px; }
+      .about-photo { height:390px; }
+      .steps { grid-template-columns:repeat(2,1fr); }
+      .trust-item { padding:19px 15px; }
+      .trust-item strong { font-size:.78rem; }
+    }
+    @media(max-width:560px) {
+      .container { width:min(100% - 34px,1160px); } .section { padding:70px 0; }
+      .header-inner { min-height:68px; } .brand img { width:43px; height:43px; }
+      .hero .container { padding-top:50px; padding-bottom:50px; gap:35px; }
+      h1 { font-size:clamp(2.45rem,12vw,3.5rem); } .hero-copy p { font-size:1rem; }
+      .hero-note { margin-top:30px; }
+      .hero-art { height:325px; margin-left:12px; } .hero-floating { left:-15px; bottom:17px; max-width:225px; padding:15px 17px; }
+      .hero-actions .button { width:100%; }
+      .trust-grid { grid-template-columns:1fr; }
+      .trust-item,.trust-item:first-child { border-right:0; border-bottom:1px solid rgba(255,255,255,.12); padding:15px 0; }
+      .services-grid,.projects-grid { grid-template-columns:1fr; }
+      .service-card { min-height:0; } .service-top { margin-bottom:19px; }
+      .about-photo { height:310px; }
+      .automation-grid { gap:10px; } .automation-item { min-height:120px; padding:16px; }
+      .steps { grid-template-columns:1fr; gap:12px; }
+      .step { display:grid; grid-template-columns:54px 1fr; gap:0 17px; }
+      .step-num { grid-row:span 2; } .step h3 { margin:0 0 4px; } .step p { margin:0 0 24px; }
+      .contact-form { padding:24px 20px; }
+      .footer-inner { align-items:flex-start; flex-direction:column; }
+    }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none!important; animation:none!important; } }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"HomeAndConstructionBusiness",
+    "name":"Ciepło Eko",
+    "url":"https://cieploeko.pl/",
+    "telephone":"+48578099019",
+    "email":"info@cieploeko.pl",
+    "areaServed":["Warszawa","Łódź","okolice"],
+    "description":"Projektowanie i wykonawstwo instalacji sanitarnych, grzewczych, wentylacyjnych, klimatyzacyjnych, elektrycznych oraz automatyki inteligentnego domu."
+  }
+  </script>
 </head>
-<body class="antialiased text-gray-800">
-
-  <!-- NAV -->
-  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur shadow">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3">
-        <img src="assets/logo.png" alt="Ciepło Eko" class="h-9 w-auto" />
-        <span class="font-semibold text-brand-700">Ciepło Eko</span>
-      </a>
-      <nav class="hidden md:flex items-center gap-8 text-sm text-gray-600">
-        <a href="#about" class="hover:text-brand-700">O nas</a>
-        <a href="#services" class="hover:text-brand-700">Usługi</a>
-        <a href="#projects" class="hover:text-brand-700">Realizacje</a>
-        <a href="#why" class="hover:text-brand-700">Dlaczego my</a>
-        <a href="#contact" class="hover:text-brand-700">Kontakt</a>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#start" class="brand" aria-label="Ciepło Eko — strona główna"><img src="assets/logo.png" alt="" width="49" height="49"><span>Ciepło <span>Eko</span></span></a>
+      <nav class="desktop-nav" aria-label="Nawigacja główna">
+        <a href="#uslugi">Usługi</a>
+        <a href="#o-nas">O nas</a>
+        <a href="#loxone">Smart Home</a>
+        <a href="#realizacje">Realizacje</a>
+        <a href="#kontakt">Kontakt</a>
       </nav>
-      <button id="menuBtn" class="md:hidden p-2 rounded-lg hover:bg-gray-100" aria-label="Otwórz menu">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-      </button>
+      <a href="#kontakt" class="button button-primary header-cta">Zapytaj o wycenę <span class="arrow" aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-nav">☰</button>
     </div>
-    <div id="mobileNav" class="md:hidden hidden border-t">
-      <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-3 text-gray-700">
-        <a href="#about" class="py-1">O nas</a>
-        <a href="#services" class="py-1">Usługi</a>
-        <a href="#projects" class="py-1">Realizacje</a>
-        <a href="#why" class="py-1">Dlaczego my</a>
-        <a href="#contact" class="py-1">Kontakt</a>
-      </div>
-    </div>
+    <nav id="mobile-nav" class="mobile-nav container" aria-label="Nawigacja mobilna">
+      <a href="#uslugi">Usługi</a><a href="#o-nas">O nas</a><a href="#loxone">Smart Home</a><a href="#realizacje">Realizacje</a><a href="#kontakt">Kontakt</a>
+    </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="relative bg-center bg-cover" style="background-image:url('assets/hero-bg.jpg')">
-    <div class="bg-black/55">
-      <div class="max-w-6xl mx-auto px-4 py-24 text-center text-white">
-        <h1 class="text-4xl md:text-6xl font-bold mb-4">Instalacje dla Twojego domu</h1>
-        <p class="text-lg md:text-2xl opacity-90 mb-8">Grzewcze • Wod-kan • Wentylacja • Klimatyzacja • Uzdatnianie wody</p>
-        <a href="#contact" class="inline-block bg-brand-500 hover:bg-brand-600 text-white font-semibold px-6 py-3 rounded-full shadow-soft">Skontaktuj się</a>
+  <main>
+    <section class="hero" id="start">
+      <div class="container">
+        <div class="hero-copy">
+          <div class="eyebrow">Nowoczesna inżynieria budynków</div>
+          <h1>Technologia, która tworzy <em>komfort.</em></h1>
+          <p>Projektujemy i wykonujemy instalacje grzewcze, sanitarne, elektryczne oraz systemy inteligentnego domu. Jeden partner — od koncepcji po uruchomienie.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#kontakt">Porozmawiajmy o projekcie <span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="button button-outline" href="#uslugi">Poznaj nasze usługi <span class="arrow" aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero-note"><span class="dot" aria-hidden="true"></span> Warszawa, Łódź i okolice</div>
+        </div>
+        <div class="hero-art">
+          <img class="hero-photo" src="assets/hero-bg.jpg" alt="Nowoczesne rozwiązania techniczne dla komfortowego domu" fetchpriority="high">
+          <div class="hero-floating"><small>Kompleksowe rozwiązania</small><strong>Jedna firma. Wszystkie kluczowe instalacje.</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="container trust-grid">
+        <div class="trust-item"><div class="trust-icon" aria-hidden="true">10+</div><div><strong>Ponad 10 lat doświadczenia</strong><span>Praktyka w instalacjach budynkowych</span></div></div>
+        <div class="trust-item"><div class="trust-icon" aria-hidden="true">✓</div><div><strong>Projekt i wykonanie</strong><span>Spójna realizacja od początku do końca</span></div></div>
+        <div class="trust-item"><div class="trust-icon" aria-hidden="true">L</div><div><strong>Autoryzowany instalator LOXONE</strong><span>Automatyka inteligentnych domów</span></div></div>
       </div>
     </div>
-  </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-      <img src="assets/logo.png" alt="Logo Ciepło Eko" class="w-40 h-40 object-contain mx-auto md:mx-0" data-animate>
-      <div data-animate>
-        <h2 class="text-3xl font-bold text-brand-700 mb-4">O nas</h2>
-        <p class="text-lg leading-relaxed mb-3">Specjalizujemy się w projektowaniu i montażu nowoczesnych instalacji dla domów i firm. Ponad 10 lat doświadczenia, certyfikowani monterzy, rzetelne terminy.</p>
-        <ul class="grid sm:grid-cols-2 gap-2 text-sm text-gray-700">
-          <li>• Pompy ciepła i ogrzewanie podłogowe</li>
-          <li>• Instalacje wodno-kanalizacyjne</li>
-          <li>• Rekuperacja i wentylacja</li>
-          <li>• Klimatyzacja split/multi</li>
-        </ul>
+    <section class="section services" id="uslugi">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Co robimy</div>
+          <h2>Instalacje, które współpracują ze sobą</h2>
+          <p>Od ogrzewania i wentylacji po instalacje elektryczne i inteligentną automatykę — dobieramy rozwiązania do budynku oraz potrzeb jego użytkowników.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card"><div class="service-top"><span class="service-symbol" aria-hidden="true">♨</span><span class="service-index">01</span></div><h3>Ogrzewanie i pompy ciepła</h3><p>Kotłownie, pompy ciepła, ogrzewanie podłogowe, instalacje grzejnikowe i sterowanie temperaturą.</p></article>
+          <article class="service-card"><div class="service-top"><span class="service-symbol" aria-hidden="true">❄</span><span class="service-index">02</span></div><h3>Klimatyzacja i chłodzenie</h3><p>Dobór, projekt i montaż systemów klimatyzacji split, multisplit oraz rozwiązań dla większych obiektów.</p></article>
+          <article class="service-card"><div class="service-top"><span class="service-symbol" aria-hidden="true">≋</span><span class="service-index">03</span></div><h3>Wentylacja i rekuperacja</h3><p>Instalacje wentylacji mechanicznej, odzysk ciepła, odpowiednia wymiana powietrza i komfort akustyczny.</p></article>
+          <article class="service-card"><div class="service-top"><span class="service-symbol" aria-hidden="true">◉</span><span class="service-index">04</span></div><h3>Instalacje wodno-kanalizacyjne</h3><p>Instalacje wody ciepłej i zimnej, kanalizacja, dobór armatury technicznej oraz uzdatnianie wody.</p></article>
+          <article class="service-card"><div class="service-top"><span class="service-symbol" aria-hidden="true">ϟ</span><span class="service-index">05</span></div><h3>Instalacje elektryczne</h3><p>Instalacje zasilające, rozdzielnice elektryczne, obwody oświetlenia i przygotowanie infrastruktury pod automatykę.</p></article>
+          <article class="service-card featured"><div class="service-top"><span class="service-symbol" aria-hidden="true">⌂</span><span class="service-index">06</span></div><h3>Inteligentny dom — LOXONE</h3><p>Automatyka oświetlenia, ogrzewania, osłon okiennych i innych instalacji. Jedno zintegrowane środowisko sterowania.</p></article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SERVICES -->
-  <section id="services" class="py-16 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold text-brand-700 mb-10" data-animate>Nasze usługi</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-2xl shadow-soft" data-animate>
-          <img src="assets/service1.png" alt="Instalacje grzewcze" class="w-16 h-16 mx-auto mb-4" />
-          <h3 class="text-xl font-semibold text-brand-700 mb-2">Instalacje grzewcze</h3>
-          <p>Pompy ciepła, kotłownie, ogrzewanie podłogowe – komfort i oszczędność energii.</p>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow-soft" data-animate>
-          <img src="assets/service2.png" alt="Instalacje wod-kan" class="w-16 h-16 mx-auto mb-4" />
-          <h3 class="text-xl font-semibold text-brand-700 mb-2">Instalacje wod-kan</h3>
-          <p>Kompleksowe instalacje wodociągowe i kanalizacyjne w budynkach mieszkalnych.</p>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow-soft" data-animate>
-          <img src="assets/service3.png" alt="Wentylacja i rekuperacja" class="w-16 h-16 mx-auto mb-4" />
-          <h3 class="text-xl font-semibold text-brand-700 mb-2">Wentylacja i rekuperacja</h3>
-          <p>Świeże powietrze w domu – odzysk ciepła i cicha praca systemu.</p>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow-soft" data-animate>
-          <img src="assets/service4.png" alt="Klimatyzacja" class="w-16 h-16 mx-auto mb-4" />
-          <h3 class="text-xl font-semibold text-brand-700 mb-2">Klimatyzacja</h3>
-          <p>Projekt i montaż efektywnych systemów split/multi – komfort przez cały rok.</p>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow-soft" data-animate>
-          <img src="assets/service5.png" alt="Uzdatnianie wody" class="w-16 h-16 mx-auto mb-4" />
-          <h3 class="text-xl font-semibold text-brand-700 mb-2">Uzdatnianie wody</h3>
-          <p>Stacje uzdatniania – miękka, czysta i zdrowa woda w całym domu.</p>
+    <section class="section about" id="o-nas">
+      <div class="container about-layout">
+        <div class="about-photo-wrap"><img class="about-photo" src="assets/20211110_164051.jpg" alt="Przykładowa realizacja instalacji grzewczej Ciepło Eko" loading="lazy"></div>
+        <div>
+          <div class="eyebrow">Poznaj Ciepło Eko</div>
+          <h2>Inżynierskie podejście do każdego projektu</h2>
+          <p>Tworzymy funkcjonalne instalacje dla domów i obiektów użytkowych. Zwracamy uwagę nie tylko na dobór urządzeń, ale też na współpracę wszystkich systemów, wygodę obsługi i przyszłą eksploatację.</p>
+          <ul class="tick-list">
+            <li>Rozwiązania dobierane do rzeczywistych potrzeb obiektu</li>
+            <li>Koordynacja instalacji sanitarnych, elektrycznych i automatyki</li>
+            <li>Sprawdzone technologie i fachowy montaż</li>
+            <li>Przejrzysty kontakt na każdym etapie realizacji</li>
+          </ul>
+          <a class="button button-outline" href="#realizacje">Zobacz wybrane realizacje <span class="arrow" aria-hidden="true">↗</span></a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-brand-700 mb-8 text-center" data-animate>Realizacje</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <a href="#p1" class="rounded-xl overflow-hidden shadow-soft block" data-animate>
-          <img src="assets/20211110_164051.jpg" alt="Kotłownia" class="w-full h-48 object-cover" />
-        </a>
-        <a href="#p2" class="rounded-xl overflow-hidden shadow-soft block" data-animate>
-          <img src="assets/IMG_20181013_095833.jpg" alt="Ogrzewanie podłogowe" class="w-full h-48 object-cover" />
-        </a>
-        <a href="#p3" class="rounded-xl overflow-hidden shadow-soft block" data-animate>
-          <img src="assets/IMG_20181105_135021.jpg" alt="Rozdzielacz" class="w-full h-48 object-cover" />
-        </a>
-        <a href="#p4" class="rounded-xl overflow-hidden shadow-soft block" data-animate>
-          <img src="assets/20211130_145939.jpg" alt="Kotłownia 2" class="w-full h-48 object-cover" />
-        </a>
-        <a href="#p5" class="rounded-xl overflow-hidden shadow-soft block" data-animate>
-          <img src="assets/20211130_145949.jpg" alt="Rozdzielacz 2" class="w-full h-48 object-cover" />
-        </a>
-        <a href="#p6" class="rounded-xl overflow-hidden shadow-soft block" data-animate>
-          <img src="assets/20211221_163405.jpg" alt="Ogrzewanie 2" class="w-full h-48 object-cover" />
-        </a>
-        <a href="#p7" class="rounded-xl overflow-hidden shadow-soft block" data-animate>
-          <img src="assets/20200520_150026.jpg" alt="Rekuperacja" class="w-full h-48 object-cover" />
-        </a>
+    <section class="section loxone" id="loxone">
+      <div class="container loxone-layout">
+        <div>
+          <div class="status">Autoryzowany instalator LOXONE</div>
+          <div class="eyebrow">Inteligentny dom</div>
+          <h2>Dom, który myśli o komforcie za Ciebie.</h2>
+          <p>Projektujemy i instalujemy automatykę budynkową LOXONE. Dzięki integracji różnych systemów dom reaguje na codzienne potrzeby mieszkańców — bez konieczności ręcznego sterowania każdym urządzeniem.</p>
+          <div class="loxone-actions"><a class="button button-light" href="#kontakt">Zapytaj o inteligentny dom <span class="arrow" aria-hidden="true">↗</span></a></div>
+        </div>
+        <div class="automation-grid" aria-label="Możliwości inteligentnego domu">
+          <div class="automation-item"><span aria-hidden="true">☼</span><strong>Oświetlenie</strong></div>
+          <div class="automation-item"><span aria-hidden="true">◫</span><strong>Rolety i żaluzje</strong></div>
+          <div class="automation-item"><span aria-hidden="true">◉</span><strong>Ogrzewanie i chłodzenie</strong></div>
+          <div class="automation-item"><span aria-hidden="true">⌂</span><strong>Automatyka całego domu</strong></div>
+        </div>
       </div>
+    </section>
 
-      <!-- Lightbox -->
-      <div id="p1" class="fixed inset-0 bg-black/80 hidden items-center justify-center p-6 lightbox">
-        <a href="#projects" class="absolute inset-0"></a>
-        <img src="assets/20211110_164051.jpg" class="max-h-[80vh] rounded-xl shadow" alt="Podgląd" />
+    <section class="section projects" id="realizacje">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Nasza praca</div>
+          <h2>Wybrane realizacje</h2>
+          <p>Instalacje wykonane z dbałością o detal techniczny i czytelność rozwiązań. Poniżej fotografie z naszych prac.</p>
+        </div>
+        <div class="projects-grid">
+          <figure class="project"><img loading="lazy" src="assets/20211110_164051.jpg" alt="Kotłownia i instalacja grzewcza"><figcaption class="project-caption"><strong>Instalacja grzewcza</strong><span>Kotłownia</span></figcaption></figure>
+          <figure class="project"><img loading="lazy" src="assets/IMG_20181013_095833.jpg" alt="Rozprowadzenie ogrzewania podłogowego"><figcaption class="project-caption"><strong>Ogrzewanie podłogowe</strong><span>Instalacja w budynku</span></figcaption></figure>
+          <figure class="project"><img loading="lazy" src="assets/IMG_20181105_135021.jpg" alt="Rozdzielacz instalacji grzewczej"><figcaption class="project-caption"><strong>Rozdzielacz ogrzewania</strong><span>Instalacje sanitarne</span></figcaption></figure>
+          <figure class="project"><img loading="lazy" src="assets/20211130_145939.jpg" alt="Wyposażenie kotłowni"><figcaption class="project-caption"><strong>Wyposażenie kotłowni</strong><span>Technika grzewcza</span></figcaption></figure>
+          <figure class="project"><img loading="lazy" src="assets/20211130_145949.jpg" alt="Instalacja techniczna z armaturą"><figcaption class="project-caption"><strong>Armatura i rozdzielacze</strong><span>Wykonawstwo instalacji</span></figcaption></figure>
+          <figure class="project"><img loading="lazy" src="assets/20200520_150026.jpg" alt="Instalacja wentylacji"><figcaption class="project-caption"><strong>Wentylacja</strong><span>Instalacje techniczne</span></figcaption></figure>
+        </div>
       </div>
-      <div id="p2" class="fixed inset-0 bg-black/80 hidden items-center justify-center p-6 lightbox">
-        <a href="#projects" class="absolute inset-0"></a>
-        <img src="assets/IMG_20181013_095833.jpg" class="max-h-[80vh] rounded-xl shadow" alt="Podgląd" />
-      </div>
-      <div id="p3" class="fixed inset-0 bg-black/80 hidden items-center justify-center p-6 lightbox">
-        <a href="#projects" class="absolute inset-0"></a>
-        <img src="assets/IMG_20181105_135021.jpg" class="max-h-[80vh] rounded-xl shadow" alt="Podgląd" />
-      </div>
-      <div id="p4" class="fixed inset-0 bg-black/80 hidden items-center justify-center p-6 lightbox">
-        <a href="#projects" class="absolute inset-0"></a>
-        <img src="assets/20211130_145939.jpg" class="max-h-[80vh] rounded-xl shadow" alt="Podgląd" />
-      </div>
-      <div id="p5" class="fixed inset-0 bg-black/80 hidden items-center justify-center p-6 lightbox">
-        <a href="#projects" class="absolute inset-0"></a>
-        <img src="assets/20211130_145949.jpg" class="max-h-[80vh] rounded-xl shadow" alt="Podgląd" />
-      </div>
-      <div id="p6" class="fixed inset-0 bg-black/80 hidden items-center justify-center p-6 lightbox">
-        <a href="#projects" class="absolute inset-0"></a>
-        <img src="assets/20211221_163405.jpg" class="max-h-[80vh] rounded-xl shadow" alt="Podgląd" />
-      </div>
-      <div id="p7" class="fixed inset-0 bg-black/80 hidden items-center justify-center p-6 lightbox">
-        <a href="#projects" class="absolute inset-0"></a>
-        <img src="assets/20200520_150026.jpg" class="max-h-[80vh] rounded-xl shadow" alt="Podgląd" />
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- WHY -->
-  <section id="why" class="py-16 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-brand-700 mb-10 text-center" data-animate>Dlaczego my?</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-white p-6 rounded-2xl shadow-soft" data-animate>
-          <h3 class="font-semibold text-brand-700 mb-2">Doświadczenie</h3>
-          <p>Ponad 10 lat na rynku i setki zrealizowanych metrów instalacji.</p>
+    <section class="section process" id="wspolpraca">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Jak pracujemy</div>
+          <h2>Od pierwszej rozmowy do gotowej instalacji</h2>
+          <p>Jasny proces współpracy pomaga uniknąć przypadkowych decyzji i dobrze zaplanować realizację.</p>
         </div>
-        <div class="bg-white p-6 rounded-2xl shadow-soft" data-animate>
-          <h3 class="font-semibold text-brand-700 mb-2">Terminowość</h3>
-          <p>Pracujemy wg harmonogramu i jasno komunikujemy etapy.</p>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow-soft" data-animate>
-          <h3 class="font-semibold text-brand-700 mb-2">Kompleksowość</h3>
-          <p>Projekt → dostawy → montaż → uruchomienie → serwis.</p>
-        </div>
-        <div class="bg-white p-6 rounded-2xl shadow-soft" data-animate>
-          <h3 class="font-semibold text-brand-700 mb-2">Jakość</h3>
-          <p>Sprawdzone marki, gwarancja i wsparcie po montażu.</p>
+        <div class="steps">
+          <div class="step"><div class="step-num">01</div><h3>Rozmowa</h3><p>Poznajemy potrzeby, zakres prac i specyfikę budynku.</p></div>
+          <div class="step"><div class="step-num">02</div><h3>Rozwiązanie</h3><p>Dobieramy technologie i ustalamy odpowiedni zakres instalacji.</p></div>
+          <div class="step"><div class="step-num">03</div><h3>Realizacja</h3><p>Wykonujemy instalacje z uwzględnieniem pozostałych branż.</p></div>
+          <div class="step"><div class="step-num">04</div><h3>Uruchomienie</h3><p>Sprawdzamy działanie i przekazujemy system do użytkowania.</p></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PARTNERZY -->
-  <section id="partners" class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center text-brand-700">Marki, z którymi pracujemy</h2>
-      <p class="text-center text-gray-600 mt-2 mb-10">Współpracujemy tylko ze sprawdzonymi producentami.</p>
-      <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center">
-        <li class="flex justify-center"><img src="assets/armacell.jpg"  alt="Armacell"  width="200" height="100" class="max-h-16 object-contain grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition" loading="lazy" decoding="async"></li>
-        <li class="flex justify-center"><img src="assets/atlantic.jpg"  alt="Atlantic"  width="200" height="100" class="max-h-16 object-contain grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition" loading="lazy" decoding="async"></li>
-        <li class="flex justify-center"><img src="assets/BOSCH.jpg"    alt="Bosch"     width="200" height="100" class="max-h-16 object-contain grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition" loading="lazy" decoding="async"></li>
-        <li class="flex justify-center"><img src="assets/Buderus.png"  alt="Buderus"   width="200" height="100" class="max-h-16 object-contain grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition" loading="lazy" decoding="async"></li>
-        <li class="flex justify-center"><img src="assets/Caleffi.jpg"  alt="Caleffi"   width="200" height="100" class="max-h-16 object-contain grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition" loading="lazy" decoding="async"></li>
-        <li class="flex justify-center"><img src="assets/Ferro.jpg"    alt="Ferro"     width="200" height="100" class="max-h-16 object-contain grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition" loading="lazy" decoding="async"></li>
-        <li class="flex justify-center"><img src="assets/Geberit.jpg"  alt="Geberit"   width="200" height="100" class="max-h-16 object-contain grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition" loading="lazy" decoding="async"></li>
-        <li class="flex justify-center"><img src="assets/Gebo.jpg"     alt="Gebo"      width="200" height="100" class="max-h-16 object-contain grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition" loading="lazy" decoding="async"></li>
-        <li class="flex justify-center"><img src="assets/Grohe.jpg"    alt="Grohe"     width="200" height="100" class="max-h-16 object-contain grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition" loading="lazy" decoding="async"></li>
-        <li class="flex justify-center"><img src="assets/KAN.jpg"      alt="KAN"       width="200" height="100" class="max-h-16 object-contain grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition" loading="lazy" decoding="async"></li>
-        <li class="flex justify-center"><img src="assets/MYCOND.png"   alt="Mycond"    width="200" height="100" class="max-h-16 object-contain grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition" loading="lazy" decoding="async"></li>
-        <li class="flex justify-center"><img src="assets/Nibe.jpg"     alt="Nibe"      width="200" height="100" class="max-h-16 object-contain grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition" loading="lazy" decoding="async"></li>
-        <li class="flex justify-center"><img src="assets/Panasonic-Akredytowany-Instalator-WHITE1.png" alt="Panasonic" width="200" height="100" class="max-h-16 object-contain grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition" loading="lazy" decoding="async"></li>
-        <li class="flex justify-center"><img src="assets/Reflex.jpg"   alt="Reflex"    width="200" height="100" class="max-h-16 object-contain grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition" loading="lazy" decoding="async"></li>
-        <li class="flex justify-center"><img src="assets/Rehau.png"    alt="Rehau"     width="200" height="100" class="max-h-16 object-contain grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition" loading="lazy" decoding="async"></li>
-        <li class="flex justify-center"><img src="assets/Salus.jpg"    alt="Salus"     width="200" height="100" class="max-h-16 object-contain grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition" loading="lazy" decoding="async"></li>
-        <li class="flex justify-center"><img src="assets/Vaillant.jpg" alt="Vaillant"  width="200" height="100" class="max-h-16 object-contain grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition" loading="lazy" decoding="async"></li>
-        <li class="flex justify-center"><img src="assets/Valvex.jpg"   alt="Valvex"    width="200" height="100" class="max-h-16 object-contain grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition" loading="lazy" decoding="async"></li>
-        <li class="flex justify-center"><img src="assets/Walraven.jpg" alt="Walraven"  width="200" height="100" class="max-h-16 object-contain grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition" loading="lazy" decoding="async"></li>
-        <li class="flex justify-center"><img src="assets/Wavin.jpg"    alt="Wavin"     width="200" height="100" class="max-h-16 object-contain grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition" loading="lazy" decoding="async"></li>
-        <li class="flex justify-center"><img src="assets/Wilo.jpg"     alt="Wilo"      width="200" height="100" class="max-h-16 object-contain grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition" loading="lazy" decoding="async"></li>
-        <li class="flex justify-center"><img src="assets/Zehnder.jpg"  alt="Zehnder"   width="200" height="100" class="max-h-16 object-contain grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition" loading="lazy" decoding="async"></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-start">
-      <!-- details -->
-      <div data-animate>
-        <h2 class="text-3xl font-bold text-brand-700 mb-6 text-center md:text-left">Kontakt</h2>
-        <div class="space-y-3 text-lg">
-          <p><strong>Telefon:</strong> <a class="text-brand-700 hover:underline" href="tel:+48578099019">+48 578 099 019</a></p>
-          <p><strong>E-mail:</strong> <a class="text-brand-700 hover:underline" href="mailto:info@cieploeko.pl">info@cieploeko.pl</a></p>
-          <p><strong>NIP:</strong> 5223256650</p>
-          <p><strong>Obsługiwany obszar:</strong> Łódź, Warszawa i okolice</p>
+    <section class="section contact" id="kontakt">
+      <div class="container contact-layout">
+        <div>
+          <div class="eyebrow">Kontakt</div>
+          <h2>Porozmawiajmy o Twojej inwestycji</h2>
+          <p class="contact-intro">Budujesz nowy dom, modernizujesz instalacje lub chcesz wdrożyć system Smart Home? Opowiedz nam o projekcie.</p>
+          <div class="contact-info">
+            <div><small>Telefon</small><a href="tel:+48578099019">+48 578 099 019</a></div>
+            <div><small>E-mail</small><a href="mailto:info@cieploeko.pl">info@cieploeko.pl</a></div>
+            <div><small>Obszar działania</small><p>Warszawa, Łódź i okolice</p></div>
+            <div><small>NIP</small><p>5223256650</p></div>
+          </div>
         </div>
+        <form id="contactForm" class="contact-form" action="https://formspree.io/f/mandaqza" method="POST">
+          <h3>Wyślij zapytanie</h3>
+          <p>Odezwiemy się, aby omówić szczegóły.</p>
+          <div class="form-field"><label for="contact-name">Imię i nazwisko</label><input id="contact-name" name="name" autocomplete="name" required maxlength="120" placeholder="Jak się nazywasz?"></div>
+          <div class="form-field"><label for="contact-email">Adres e-mail</label><input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="160" placeholder="twoj@email.pl"></div>
+          <div class="form-field"><label for="contact-message">W czym możemy pomóc?</label><textarea id="contact-message" name="message" required maxlength="5000" placeholder="Opisz krótko swoją inwestycję..."></textarea></div>
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0">
+          <button type="submit" class="button button-primary form-submit">Wyślij wiadomość <span class="arrow" aria-hidden="true">↗</span></button>
+          <p class="form-message" id="formMsg" role="status" aria-live="polite"></p>
+        </form>
       </div>
-      <!-- form -->
-      <div data-animate>
-        <div class="bg-gray-50 p-6 rounded-2xl shadow-soft">
-          <h3 class="text-xl font-semibold text-brand-700 mb-2 text-center md:text-left">Napisz do nas</h3>
-          <form id="contactForm" action="https://formspree.io/f/mandaqza" method="POST" class="space-y-4">
-            <input required name="name"  type="text"  placeholder="Imię i nazwisko" class="w-full p-3 border border-gray-300 rounded-lg" />
-            <input required name="email" type="email" placeholder="Adres e-mail"    class="w-full p-3 border border-gray-300 rounded-lg" />
-            <textarea required name="message" placeholder="Twoja wiadomość" class="w-full p-3 border border-gray-300 rounded-lg h-40"></textarea>
-            <input type="text" name="_gotcha" style="display:none">
-            <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-semibold py-3 rounded-lg">Wyślij wiadomość</button>
-            <p id="formMsg" class="text-sm mt-2"></p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-gray-900 text-gray-300 py-8">
-    <div class="max-w-6xl mx-auto px-4 text-center space-y-2">
-      <p>© <span id="year"></span> Ciepło Eko. Wszelkie prawa zastrzeżone.</p>
-      <p><a href="#" class="underline hover:text-white">Polityka prywatności</a> · <a href="#" class="underline hover:text-white">RODO</a></p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Ciepło Eko. Wszystkie prawa zastrzeżone.</p>
+      <div class="footer-links"><a href="#uslugi">Usługi</a><a href="#loxone">Smart Home</a><a href="#kontakt">Kontakt</a></div>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script>
-    // mobile nav
-    const btn = document.getElementById('menuBtn');
-    const mobile = document.getElementById('mobileNav');
-    btn?.addEventListener('click', ()=> mobile.classList.toggle('hidden'));
-    mobile?.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> mobile.classList.add('hidden')));
-
-    // simple intersection animations
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
-    }, {threshold:.12});
-    document.querySelectorAll('[data-animate]').forEach(el=> io.observe(el));
-
-    // year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Formspree feedback
-    (function(){
+    (() => {
+      const toggle = document.querySelector('.menu-toggle');
+      const mobileNav = document.getElementById('mobile-nav');
+      toggle.addEventListener('click', () => {
+        const open = mobileNav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
+        toggle.textContent = open ? '×' : '☰';
+      });
+      mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+        mobileNav.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Otwórz menu');
+        toggle.textContent = '☰';
+      }));
+      document.getElementById('year').textContent = new Date().getFullYear();
       const form = document.getElementById('contactForm');
-      if(!form) return;
-      const msg  = document.getElementById('formMsg');
-      form.addEventListener('submit', async (e) => {
+      const msg = document.getElementById('formMsg');
+      form.addEventListener('submit', async e => {
         e.preventDefault();
-        msg.textContent = 'Wysyłanie…';
-        msg.className = 'text-sm text-gray-600 mt-2';
-        const res = await fetch(form.action, {
-          method: 'POST',
-          headers: { 'Accept': 'application/json' },
-          body: new FormData(form)
-        });
-        if (res.ok) {
+        const submit = form.querySelector('button[type="submit"]');
+        submit.disabled = true;
+        msg.className = 'form-message';
+        msg.textContent = 'Wysyłanie wiadomości…';
+        try {
+          const response = await fetch(form.action, { method:'POST', headers:{Accept:'application/json'}, body:new FormData(form) });
+          if (!response.ok) throw new Error('Request failed');
           form.reset();
           msg.textContent = 'Dziękujemy! Wiadomość została wysłana.';
-          msg.className = 'text-sm text-brand-700 mt-2';
-        } else {
-          msg.textContent = 'Błąd wysyłki. Napisz na info@cieploeko.pl';
-          msg.className = 'text-sm text-red-700 mt-2';
+        } catch (error) {
+          msg.className = 'form-message error';
+          msg.textContent = 'Nie udało się wysłać formularza. Napisz na info@cieploeko.pl.';
+        } finally {
+          submit.disabled = false;
         }
       });
     })();
