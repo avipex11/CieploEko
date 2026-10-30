@@ -308,6 +308,15 @@
     .premium-audience-card.is-architect a { color:#c7f4d4; }
     .premium-audience-card a:hover { text-decoration:underline; text-underline-offset:4px; }
     @media(max-width:700px) { .premium-audience-grid { grid-template-columns:1fr; } .premium-audience { padding:55px 0; } .premium-audience-card { min-height:0; padding:26px 23px; } }
+
+    .premium-realization { display:grid; grid-template-columns:190px 1fr; align-items:center; gap:22px; margin-top:19px; border:1px solid #d9e7df; border-radius:12px; background:#fff; overflow:hidden; padding:10px; transition:border-color .2s,transform .2s; }
+    .premium-realization:hover { border-color:#8cb6a0; transform:translateY(-2px); }
+    .premium-realization img { width:100%; height:140px; border-radius:7px; object-fit:cover; background:#e2eae4; }
+    .premium-realization span { display:flex; flex-direction:column; align-items:flex-start; gap:6px; padding:10px 15px 10px 0; }
+    .premium-realization small { font-size:.69rem; font-weight:800; letter-spacing:.12em; color:var(--forest); text-transform:uppercase; }
+    .premium-realization strong { font-size:1.1rem; line-height:1.37; letter-spacing:-.03em; }
+    .premium-realization em { font-size:.8rem; font-weight:800; font-style:normal; color:var(--forest); }
+    @media(max-width:560px){ .premium-realization { grid-template-columns:1fr; gap:6px; } .premium-realization img { height:190px; } .premium-realization span { padding:10px 12px 14px; } }
   </style>
   <script type="application/ld+json">
   {
@@ -420,6 +429,10 @@
             <a href="dla-architektow/">Zobacz ofertę dla architektów ↗</a>
           </article>
         </div>
+        <a class="premium-realization" href="realizacje/rezydencja-instalacje-kompleksowe/">
+          <img src="assets/portfolio/rezydencja-kompleksowe-instalacje/rezydencja-zewnatrz-01.webp" alt="Dom z basenem — kompleksowa realizacja instalacji" loading="lazy">
+          <span><small>Przykład z naszego portfolio</small><strong>Dom z basenem: ogrzewanie, wod-kan, klimatyzacja VRV i rekuperacja</strong><em>Zobacz realizację i 16 zdjęć z prac ↗</em></span>
+        </a>
       </div>
     </section>
     <section class="section loxone" id="loxone">
