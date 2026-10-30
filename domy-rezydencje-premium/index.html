@@ -7,7 +7,29 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/service-pages.css">
-<style>.special-band{background:#143a34;color:#eaf5ed;padding:24px 0}.special-band .wrap{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.special-band span{font-size:.9rem;font-weight:800}.special-band small{color:#bed7c7;font-size:.77rem}.hero .hero-photo{object-position:center}.audience{display:inline-block;background:#e1f2e7;color:#1c7053;padding:6px 12px;border-radius:5px;font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:15px}.related a{transition:border-color .2s}</style>
+<style>.special-band{background:#143a34;color:#eaf5ed;padding:24px 0}.special-band .wrap{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.special-band span{font-size:.9rem;font-weight:800}.special-band small{color:#bed7c7;font-size:.77rem}.hero .hero-photo{object-position:center}.audience{display:inline-block;background:#e1f2e7;color:#1c7053;padding:6px 12px;border-radius:5px;font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:15px}.related a{transition:border-color .2s}
+/* Indywidualna galeria: duże zdjęcie + trzy szczegóły */
+.premium-hero-gallery{display:grid;grid-template-rows:minmax(0,1fr) 125px;gap:10px;min-width:0;align-self:stretch;height:505px}
+.premium-mini-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;min-height:0}
+.premium-gallery-photo{position:relative;display:block;width:100%;height:100%;min-width:0;min-height:0;padding:0;overflow:hidden;cursor:zoom-in;border:0;border-radius:10px;background:#dce9e0;box-shadow:0 7px 22px #0e2e241c}
+.premium-gallery-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+.premium-gallery-photo:hover img{transform:scale(1.055)}
+.premium-gallery-photo span{position:absolute;left:0;right:0;bottom:0;text-align:left;padding:25px 13px 11px;background:linear-gradient(transparent,#0c231db8);color:white;font-size:.72rem;font-weight:800}
+.premium-gallery-photo.is-main span{font-size:.92rem;padding:37px 20px 16px}
+.premium-gallery-photo:focus-visible{outline:3px solid #47ae7d;outline-offset:3px}
+.premium-lightbox{inset:0;position:fixed;max-width:100vw;width:100vw;height:100vh;max-height:100vh;border:0;padding:15px;background:#0d191b;color:white;margin:0}
+.premium-lightbox::backdrop{background:#050c0bed}
+.premium-lightbox-top{max-width:1050px;margin:0 auto 12px;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:.85rem;font-weight:800;color:#e4f0e7}
+.premium-lightbox button{border:0;border-radius:50%;width:44px;height:44px;flex:none;background:#ffffff23;color:white;font-size:1.65rem;cursor:pointer}
+.premium-lightbox button:hover{background:#ffffff40}
+.premium-lightbox-stage{display:flex;align-items:center;justify-content:center;gap:12px;max-height:calc(100vh - 138px)}
+.premium-lightbox-stage img{max-width:min(calc(100vw - 160px),1080px);max-height:calc(100vh - 147px);object-fit:contain;width:auto;height:auto}
+.premium-lightbox-counter{text-align:center;font-size:.78rem;color:#d3e2dc;margin:7px 0}
+@media(max-width:1100px){.premium-hero-gallery{height:460px;grid-template-rows:minmax(0,1fr) 110px}}
+@media(max-width:750px){.premium-hero-gallery{order:2;height:425px;grid-template-rows:minmax(0,1fr) 105px}.premium-gallery-photo span{font-size:.65rem;padding:23px 10px 9px}}
+@media(max-width:500px){.premium-hero-gallery{height:360px;grid-template-rows:minmax(0,1fr) 87px;gap:7px}.premium-mini-gallery{gap:7px}.premium-gallery-photo{border-radius:7px}.premium-gallery-photo span{font-size:.59rem;padding:20px 7px 7px}.premium-gallery-photo.is-main span{font-size:.79rem;padding:24px 13px 11px}.premium-lightbox-stage{gap:3px}.premium-lightbox-stage img{max-width:calc(100vw - 102px)}.premium-lightbox button{width:40px;height:40px}}
+@media(prefers-reduced-motion:reduce){.premium-gallery-photo img{transition:none}}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Instalacje dla rezydencji i domów premium | Warszawa – Ciepło Eko","url":"https://cieploeko.pl/domy-rezydencje-premium/","about":{"@type":"Service","name":"Dla wymagających inwestorów","provider":{"@type":"Organization","name":"Ciepło Eko","url":"https://cieploeko.pl/"}}}</script>
 </head><body>
 <header class="header"><div class="wrap"><a class="logo" href="../"><img src="../assets/logo-new.svg" alt="Ciepło Eko" width="47" height="47"><span>Ciepło <em>Eko</em></span></a>
@@ -15,7 +37,24 @@
 <button class="menu-toggle" type="button" aria-label="Otwórz menu" aria-expanded="false">☰</button></div></header>
 <main><section class="hero"><div class="wrap"><nav class="crumb" aria-label="Ścieżka nawigacji"><a href="../">Strona główna</a> / Dla wymagających inwestorów</nav>
 <div class="hero-grid"><div><span class="audience">Dla wymagających inwestorów</span><h1>Komfort zaprojektowany w każdym detalu</h1><p class="lead">Instalacje w rezydencjach i indywidualnie projektowanych domach wymagają szczególnego doświadczenia. Łączymy ogrzewanie, chłodzenie, wentylację, elektrykę i Smart Home w spójny system dopasowany do architektury.</p><ul class="check-list"><li>Wieloletnie doświadczenie w wymagających realizacjach</li><li>Instalacje sanitarne, elektryczne i automatyka w jednym projekcie</li><li>Dbałość o estetykę, komfort i współpracę z architektami</li></ul><a class="button" href="#kontakt">Porozmawiajmy o projekcie ↗</a></div>
-<img class="hero-photo" src="../assets/projects/lazienka-wanna.webp" alt="Estetyka wnętrza i instalacji w indywidualnej inwestycji" fetchpriority="high"></div></div></section>
+<div class="premium-hero-gallery" aria-label="Przykłady realizacji premium">
+  <button type="button" class="premium-gallery-photo is-main" data-gallery-index="0" aria-label="Powiększ: Strefa SPA">
+  <img src="../assets/premium/spa-dark-room.webp" onerror="this.onerror=null;this.src='../assets/projects/lazienka-prysznic.webp'" alt="Strefa SPA z kamiennymi ścianami i drewnianymi elementami" fetchpriority="high">
+  <span>Strefa SPA</span>
+</button>
+  <div class="premium-mini-gallery"><button type="button" class="premium-gallery-photo" data-gallery-index="1" aria-label="Powiększ: Marmurowa łazienka">
+  <img src="../assets/premium/marble-bathroom.webp" onerror="this.onerror=null;this.src='../assets/projects/lazienka-umywalki.webp'" alt="Łazienka wykończona marmurem i oświetleniem dekoracyjnym" loading="lazy">
+  <span>Marmurowa łazienka</span>
+</button>
+<button type="button" class="premium-gallery-photo" data-gallery-index="2" aria-label="Powiększ: Nowoczesna łazienka">
+  <img src="../assets/premium/white-bathroom.webp" onerror="this.onerror=null;this.src='../assets/projects/lazienka-wanna.webp'" alt="Jasna łazienka z wolnostojącą wanną i dyskretną wentylacją" loading="lazy">
+  <span>Nowoczesna łazienka</span>
+</button>
+<button type="button" class="premium-gallery-photo" data-gallery-index="3" aria-label="Powiększ: Detal instalacyjny">
+  <img src="../assets/premium/radiator-detail.webp" onerror="this.onerror=null;this.src='../assets/projects/grzejnik-kanalowy.webp'" alt="Żeliwny grzejnik w strefie SPA — detal instalacji ogrzewania" loading="lazy">
+  <span>Detal instalacyjny</span>
+</button></div>
+</div></div></div></section>
 <div class="special-band"><div class="wrap"><span>Wieloletnie doświadczenie</span><small>Zaawansowane technicznie realizacje</small><small>Koordynacja wielu branż</small><small>Warszawa i okolice</small></div></div>
 <section class="section"><div class="wrap intro-grid"><div><span class="eyebrow">Nasze podejście</span><h2>Doświadczenie w obiektach o wysokim standardzie</h2></div><div><p>W rezydencji każda instalacja wpływa na całość projektu. Znaczenie mają nie tylko parametry urządzeń, ale także estetyka elementów widocznych, akustyka, dyskretne prowadzenie przewodów i łatwy dostęp do serwisu.</p><p>Wieloletnia praktyka przy skomplikowanych technicznie inwestycjach pozwala nam przewidywać kolizje i uzgadniać rozwiązania z architektem, projektantem wnętrz oraz pozostałymi wykonawcami.</p></div></div></section>
 <section class="section section-soft"><div class="wrap"><span class="eyebrow">Kompleksowe rozwiązania</span><h2>Zakres współpracy</h2><div class="feature-grid"><article class="feature"><span class="num">01</span><h3>Ogrzewanie i źródła ciepła</h3><p>Pompy ciepła, kotłownie, ogrzewanie podłogowe i indywidualne strefy komfortu.</p></article><article class="feature"><span class="num">02</span><h3>Klimatyzacja i chłodzenie</h3><p>Rozwiązania uwzględniające architekturę, akustykę i możliwości dyskretnego montażu.</p></article><article class="feature"><span class="num">03</span><h3>Wentylacja i rekuperacja</h3><p>Odpowiednie powietrze bez przypadkowych kolizji z wnętrzem i konstrukcją budynku.</p></article><article class="feature"><span class="num">04</span><h3>Elektryka i inteligentny dom LOXONE</h3><p>Zintegrowane sterowanie oświetleniem, osłonami oraz wybranymi instalacjami.</p></article></div></div></section>
@@ -35,5 +74,18 @@
 <div class="case-proof"><img src="../assets/portfolio/rezydencja-kompleksowe-instalacje/rezydencja-zewnatrz-01.webp" alt="Dom z basenem — realizacja instalacji Ciepło Eko" loading="lazy">
 <div class="details"><span class="kicker">Studium przypadku · 16 zdjęć</span><h3>Kompleksowe instalacje w domu z basenem</h3><p>Przykład realizacji, w której wykonaliśmy ogrzewanie, instalacje wodno-kanalizacyjne, klimatyzację VRV oraz wentylację nawiewno-wywiewną z rekuperacją. Pokazujemy 16 zdjęć wykonanych prac.</p><a href="../realizacje/rezydencja-instalacje-kompleksowe/">Poznaj zakres prac i obejrzyj zdjęcia ↗</a></div></div></div></section>
 <section class="related"><div class="wrap"><span class="eyebrow">Zobacz również</span><h2>Powiązane usługi</h2><div class="related-links"><a href="../dla-architektow/">Dla architektów ↗</a><a href="../inteligentny-dom-loxone/">Inteligentny dom LOXONE ↗</a><a href="../#uslugi">Wszystkie usługi ↗</a></div></div></section>
-</main><footer><div class="wrap"><span>© <span data-year>2026</span> Ciepło Eko · NIP 5223256650</span><a href="../">Strona główna</a><a href="mailto:info@cieploeko.pl">info@cieploeko.pl</a></div></footer><script src="../assets/service-pages.js" defer></script>
+</main><footer><div class="wrap"><span>© <span data-year>2026</span> Ciepło Eko · NIP 5223256650</span><a href="../">Strona główna</a><a href="mailto:info@cieploeko.pl">info@cieploeko.pl</a></div></footer><dialog id="premium-lightbox" class="premium-lightbox" aria-label="Galeria realizacji premium">
+  <div class="premium-lightbox-top"><span id="premium-lightbox-title">Realizacja premium</span><button class="premium-close" type="button" aria-label="Zamknij">×</button></div>
+  <div class="premium-lightbox-stage"><button class="premium-prev" type="button" aria-label="Poprzednie zdjęcie">‹</button><img id="premium-lightbox-image" alt=""><button class="premium-next" type="button" aria-label="Następne zdjęcie">›</button></div>
+  <p class="premium-lightbox-counter" id="premium-lightbox-counter"></p>
+</dialog><script>
+(()=>{const cards=[...document.querySelectorAll('.premium-gallery-photo')];const dlg=document.getElementById('premium-lightbox');const img=document.getElementById('premium-lightbox-image');const label=document.getElementById('premium-lightbox-title');const counter=document.getElementById('premium-lightbox-counter');let current=0;
+function show(){current=(current+cards.length)%cards.length;const source=cards[current].querySelector('img');img.src=source.currentSrc||source.src;img.alt=source.alt;label.textContent=source.alt;counter.textContent=(current+1)+' / '+cards.length}
+cards.forEach((card,i)=>card.addEventListener('click',()=>{current=i;show();if(!dlg.open)dlg.showModal()}));
+dlg.querySelector('.premium-close').addEventListener('click',()=>dlg.close());
+dlg.querySelector('.premium-prev').addEventListener('click',()=>{current--;show()});
+dlg.querySelector('.premium-next').addEventListener('click',()=>{current++;show()});
+dlg.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){e.preventDefault();current--;show()}if(e.key==='ArrowRight'){e.preventDefault();current++;show()}});
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()})})();
+</script><script src="../assets/service-pages.js" defer></script>
 </body></html>
